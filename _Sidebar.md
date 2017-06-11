@@ -1,7 +1,6 @@
 ### Basics
 - [Home](./Home)
 - [Ethereum Whitepaper](./White-Paper)
-- [Design Rationale](./Design-Rationale)
 - [Ethereum Yellow Paper](http://gavwood.com/Paper.pdf)
 - [FAQ](./FAQ)
 
