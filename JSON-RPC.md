@@ -1149,6 +1149,8 @@ params: [
   - `gasPrice`: `QUANTITY` - gas price provided by the sender in Wei.
   - `gas`: `QUANTITY` - gas provided by the sender.
   - `input`: `DATA` - the data send along with the transaction.
+  - `replayProtected`: `BOOL` - replay protection (EIP-155)
+  - `chainId`: `QUANTITY` - chain id if `replayProtected: true`, otherwise empty
 
 ##### Example
 ```js
@@ -1171,6 +1173,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getTransactionByHash","param
     "gas": "0x7f110" // 520464
     "gasPrice":"0x09184e72a000",
     "input":"0x603880600c6000396000f300603880600c6000396000f3603880600c6000396000f360",
+    "replayProtected": false
   }
 }
 ```
