@@ -138,7 +138,7 @@ $ eth --force-mining --mining on [YOUR OPTIONS...]
 ### Where can I learn about contract development?
 
 + Articles
-  + [Ethereum Development Tutorial](https://github.com/ethereum/wiki/wiki/Ethereum-Development-Tutorial)
+  + [Ethereum Development Tutorial](./Ethereum-Development-Tutorial)
 + Videos
   + [Ethereum](https://www.youtube.com/user/ethereumproject/videos)
   + [EtherCasts](https://www.youtube.com/user/EtherCasts/videos)
@@ -146,7 +146,7 @@ $ eth --force-mining --mining on [YOUR OPTIONS...]
 ### Where can I learn Serpent, the Python-like language?
 
 + Specifications
-  + [The Serpent Language](https://github.com/ethereum/wiki/wiki/Serpent)
+  + [The Serpent Language](./Serpent)
 + Examples
   + [Vitalik's Serpent examples](https://github.com/ethereum/serpent/tree/master/examples)
 + Tutorials
@@ -167,9 +167,9 @@ $ eth --force-mining --mining on [YOUR OPTIONS...]
 
 + Specifications
   + [Solidity, Docs and ABI](https://github.com/ethereum/cpp-ethereum/wiki/Solidity%2C-Docs-and-ABI)
-  + [Solidity Features](https://github.com/ethereum/wiki/wiki/Solidity-Features)
+  + [Solidity Features](./Solidity-Features)
 + Tutorials
-  + [Solidity Tutorial](https://github.com/ethereum/wiki/wiki/Solidity-Tutorial)
+  + [Solidity Tutorial](./Solidity-Tutorial)
   + [Contract Writing in Solidity](https://dappsforbeginners.wordpress.com)
 
 ### How to test contracts?
@@ -201,7 +201,7 @@ $ eth --force-mining --mining on [YOUR OPTIONS...]
 + [The PoC 6 API for C++](https://github.com/ethereum/cpp-ethereum/wiki/Client-Development-with-PoC-6)
 + [The PoC 5 API for Go](https://github.com/ethereum/go-ethereum/wiki/PoC-5-Public-Go-API)
 + [The PoC 6 API for QML](https://github.com/ethereum/go-ethereum/wiki/QML-PoC6-API)
-+ [The PoC 7 API for JavaScript](https://github.com/ethereum/wiki/wiki/JavaScript-API)
++ [The PoC 7 API for JavaScript](./JavaScript-API)
 
 ### Where can I learn about ÐApp development?
 
@@ -217,7 +217,7 @@ Official
 + [Ethereum command-line client (Go)](https://github.com/ethereum/go-ethereum/wiki/Command-Line-Options)
 + [Mist Browser (Go)](https://github.com/ethereum/go-ethereum)
 + [Pyeth command-line client (Python)](https://github.com/ethereum/pyethereum#interacting-with-the-network)
-+ [Serpent Compiler (Python)](https://github.com/ethereum/wiki/wiki/Serpent)
++ [Serpent Compiler (Python)](./Serpent)
 
 Community
 

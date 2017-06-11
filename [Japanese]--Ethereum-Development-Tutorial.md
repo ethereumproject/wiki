@@ -226,7 +226,7 @@ Note that high-level languages will often have their own wrappers for these opco
 
 ### Basics of the Ethereum Blockchain
 
-　イーサリアム・ブロックチェイン(あるいは「帳簿」）は分散型で（中央集約型ではなく）、全アカウントのカレントステイト（現在の状態）を保持し、大規模に複製されたデータベースである。このブロックチェーンは全アカウントの状態を貯蔵するのに、[「パトリシア木」](https://github.com/ethereum/wiki/wiki/%5BEnglish%5D-Patricia-Tree) というデータ構造を採用している。この「パトリシア木」は本質的に、一般的なKey/value貯蔵時にふるまう「マークル木」の特殊型である。標準のマークル木のように、パトリシア木はルートハッシュを保持している。ルートハッシュは、木構造全体を参照するために使用可能で、木のコンテンツはルートハッシュの変更なしに修正不可能である。それぞれのアカウントのために、木は、[    account_nonce,     ether_balance, code_hash,     storage_root     ]　をふくんだ、４つの構成要素からなるタップル（４-tuple)を貯蔵している。ここで、このタップルの要素の定義は以下の通りである。
+　イーサリアム・ブロックチェイン(あるいは「帳簿」）は分散型で（中央集約型ではなく）、全アカウントのカレントステイト（現在の状態）を保持し、大規模に複製されたデータベースである。このブロックチェーンは全アカウントの状態を貯蔵するのに、[「パトリシア木」](./%5BEnglish%5D-Patricia-Tree) というデータ構造を採用している。この「パトリシア木」は本質的に、一般的なKey/value貯蔵時にふるまう「マークル木」の特殊型である。標準のマークル木のように、パトリシア木はルートハッシュを保持している。ルートハッシュは、木構造全体を参照するために使用可能で、木のコンテンツはルートハッシュの変更なしに修正不可能である。それぞれのアカウントのために、木は、[    account_nonce,     ether_balance, code_hash,     storage_root     ]　をふくんだ、４つの構成要素からなるタップル（４-tuple)を貯蔵している。ここで、このタップルの要素の定義は以下の通りである。
 
 * account_nonce：アカウントから送られたトランザクション数
 * ether_balance  ：アカウントの残金
@@ -259,4 +259,4 @@ Note that high-level languages will often have their own wrappers for these opco
 
 ### Fine Points To Keep Track Of
 
-See [https://github.com/ethereum/wiki/wiki/Subtleties](https://github.com/ethereum/wiki/wiki/Subtleties)
+See [./Subtleties](./Subtleties)

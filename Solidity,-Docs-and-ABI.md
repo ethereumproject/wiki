@@ -3,7 +3,7 @@ name: Solidity Docs and ABI
 category: 
 ---
 
-*NOTE: This is intended largely as a vague overview and a historical reference. For specific details and the latest specification, see [Ethereum Contract ABI](https://github.com/ethereum/wiki/wiki/Ethereum-Contract-ABI), [Ethereum Natural Specification Format](https://github.com/ethereum/wiki/wiki/Ethereum-Natural-Specification-Format) and [Solidity Tutorial](https://github.com/ethereum/wiki/wiki/Solidity-Tutorial).*
+*NOTE: This is intended largely as a vague overview and a historical reference. For specific details and the latest specification, see [Ethereum Contract ABI](./Ethereum-Contract-ABI), [Ethereum Natural Specification Format](./Ethereum-Natural-Specification-Format) and [Solidity Tutorial](./Solidity-Tutorial).*
 
 An ABI is intended to serve as the de facto method for encoding & decoding data into & out of transactions.
 
@@ -68,7 +68,7 @@ In previous versions of the proof-of-concept series, only simple 32-byte values 
 
 ### ABI
 
-See [Ethereum Contract ABI](https://github.com/ethereum/wiki/wiki/Ethereum-Contract-ABI).
+See [Ethereum Contract ABI](./Ethereum-Contract-ABI).
 
 ### Documentation
 

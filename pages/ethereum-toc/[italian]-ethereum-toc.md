@@ -5,7 +5,7 @@ category:
 
 ### Benvenuti. Ethereum: il contratto intelligente di nuova generazione e piattaforma di applicazioni decentralizzate.
 
-[Libro Bianco di Ethereum](https://github.com/ethereum/wiki/wiki/%5BItalian%5D-Libro-Bianco)
+[Libro Bianco di Ethereum](./%5BItalian%5D-Libro-Bianco)
 
 [RLP](https://google.it), la caratteristica del prefisso lineare ricorsivo, utilizzato per la codifica dei dati attraverso Ethereum.
 
@@ -25,6 +25,6 @@ category:
 
 [Camera di Compensazione](https://google.it)
 
-[Introduzione allo sviluppo su Ethereum](https://github.com/ethereum/wiki/wiki/%5BItalian%5D-Introduzione-allo-sviluppo-su-Ethereum)
+[Introduzione allo sviluppo su Ethereum](./%5BItalian%5D-Introduzione-allo-sviluppo-su-Ethereum)
 
-[Impostare il proprio ambiente di sviluppo Ethereum](https://github.com/ethereum/wiki/wiki/%5BItalian%5D-Impostare-il-proprio-ambiente-di-sviluppo-Ethereum)
+[Impostare il proprio ambiente di sviluppo Ethereum](./%5BItalian%5D-Impostare-il-proprio-ambiente-di-sviluppo-Ethereum)

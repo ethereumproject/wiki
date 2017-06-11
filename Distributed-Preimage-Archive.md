@@ -81,6 +81,6 @@ From the set up of the first forward onwards, all retrieval requests of the same
 
 ## Routing
 
-It is based on Kademlia's routing. [details](https://github.com/ethereum/wiki/wiki/Cademlia-Peer-Selection)
+It is based on Kademlia's routing. [details](./Cademlia-Peer-Selection)
 
 _to be continued..._

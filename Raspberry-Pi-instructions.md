@@ -20,7 +20,7 @@ Log in and type `passwd <user>` to update the password for each user.
 
 
 Currently the go client (geth) and the cpp client (eth) are preinstalled. You can find instruction on how to use them here: https://github.com/ethereum/go-ethereum/wiki/Command-Line-Options and here: https://github.com/ethereum/cpp-ethereum/wiki/Using-Ethereum-CLI-Client. But executing eth/geth with `--help` will give you more up-to-date information on how to use them.
-Also eth-netstats is installed. You can find instructions in how to use it here: https://github.com/ethereum/wiki/wiki/Network-Status.
+Also eth-netstats is installed. You can find instructions in how to use it here: ./Network-Status.
 It is used to display your client on the centralized network server (http://stats.ethdev.com/).
 In order to give your client a different name, choose your favorite command line text editor and change the `INSTANCE_NAME` parameter in `~/eth-net-intelligence-api/app.json` to whatever you like.
 

@@ -35,4 +35,4 @@ This would make our brainwallets much harder to crack, and perhaps even allowing
 
 1. https://rya.nc/cracking_cryptocurrency_brainwallets.pdf
 2. https://github.com/ethereum/go-ethereum/blob/master/crypto/crypto_test.go#L65
-3. https://github.com/ethereum/wiki/wiki/Web3-Secret-Storage-Definition
+3. ./Web3-Secret-Storage-Definition

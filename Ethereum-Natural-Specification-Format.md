@@ -3,7 +3,7 @@ name: Ethereum Natural Specification Format
 category: 
 ---
 
-Solidity contracts can have a special form of comments that form the basis of the Ethereum Natural Specification Format. For a usage example please check [here](https://github.com/ethereum/wiki/wiki/Natspec-Example/).
+Solidity contracts can have a special form of comments that form the basis of the Ethereum Natural Specification Format. For a usage example please check [here](./Natspec-Example/).
 
 # Documentation Example
 
@@ -106,7 +106,7 @@ The above documentation will produce the following user documentation json file 
 }
 ```
 
-Note that the key by which to find the methods is the function's canonical signature as defined in the [Contract ABI](https://github.com/ethereum/wiki/wiki/Ethereum-Contract-ABI#signature) and not simply the function's name.
+Note that the key by which to find the methods is the function's canonical signature as defined in the [Contract ABI](./Ethereum-Contract-ABI#signature) and not simply the function's name.
 
 ## Developer Documentation
 
@@ -135,4 +135,4 @@ Apart from the user documentation file, a developer documentation json file shou
 
 ## Example usage
 
-There is a detailed example of using the Natspec feature with the cpp client [here](https://github.com/ethereum/wiki/wiki/Natspec-Example/).
+There is a detailed example of using the Natspec feature with the cpp client [here](./Natspec-Example/).

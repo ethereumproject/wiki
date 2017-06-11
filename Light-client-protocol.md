@@ -7,7 +7,7 @@ The purpose of the light client protocol is to allow users in low-capacity envir
 
 ### Background: Patricia Merkle Trees
 
-All substantial quantities of data in Ethereum are stored in a data structure known as the [Patricia Merkle tree](https://github.com/ethereum/wiki/wiki/%5BEnglish%5D-Patricia-Tree), a tree structure where each node in the tree is the hash of its children. Each set of key/value pairs maps to a unique root hash, and only a small subset of nodes is needed to prove that a particular key/value combination is in the tree corresponding to a particular root hash.
+All substantial quantities of data in Ethereum are stored in a data structure known as the [Patricia Merkle tree](./%5BEnglish%5D-Patricia-Tree), a tree structure where each node in the tree is the hash of its children. Each set of key/value pairs maps to a unique root hash, and only a small subset of nodes is needed to prove that a particular key/value combination is in the tree corresponding to a particular root hash.
 
 ![](http://vitalik.ca/files/spv.png)
 

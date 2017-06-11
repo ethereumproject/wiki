@@ -9,13 +9,13 @@ By metadata we mean all information related to a contract that is thought to be 
 This includes:
 
 * Contract source code
-* [ABI definition](https://github.com/ethereum/wiki/wiki/Ethereum-Contract-ABI) 
-* [NatSpec user doc](https://github.com/ethereum/wiki/wiki/Ethereum-Natural-Specification-Format#user-documentation)
-* [NatSpec developer's doc](https://github.com/ethereum/wiki/wiki/Ethereum-Natural-Specification-Format#developer-documentation)
+* [ABI definition](./Ethereum-Contract-ABI) 
+* [NatSpec user doc](./Ethereum-Natural-Specification-Format#user-documentation)
+* [NatSpec developer's doc](./Ethereum-Natural-Specification-Format#developer-documentation)
 
 These resources have their _standard specification_ in json format, ideally meant to be produced by IDE infrastructures or compilers directly.
 
-For instance, the [solidity](https://github.com/ethereum/wiki/wiki/Solidity-Tutorial) compiler offers a `doxygen` style way of specifying natspec with inline smart comments. Upon compilation it creates both NatSpec user doc as well ABI definition. But note that there is nothing inherently solidity specific about these data, and other contract languages are encouraged to implement their NatSpec/ABI support potentially with IDE-s extending it.
+For instance, the [solidity](./Solidity-Tutorial) compiler offers a `doxygen` style way of specifying natspec with inline smart comments. Upon compilation it creates both NatSpec user doc as well ABI definition. But note that there is nothing inherently solidity specific about these data, and other contract languages are encouraged to implement their NatSpec/ABI support potentially with IDE-s extending it.
 
 Since DAPPs and IDEs will typically want to interact with these resources, standardising their deployment and distribution is important for a smooth ethereum experience. 
 
@@ -61,7 +61,7 @@ In order to avoid malicious agents hijacking metadata by overwriting the namereg
 - before the corresponding contract is deployed, we check if the correct metadata bundle is found in the registry and confirmed to a satisfying level of certainty (X blocks).
 
 How it looks like in `Alethzero` is illustrated [here]|(
-https://github.com/ethereum/wiki/wiki/NatSpec-Example)
+./NatSpec-Example)
 
 ## Metadata Access
 
@@ -81,7 +81,7 @@ This functionality of uploading and registering location is supposed to be also 
 
 (surely with old web urls, we are always exposed to server failure/hacking, etc)
 
-Read more [here](https://github.com/ethereum/wiki/wiki/NatSpec-Determination)
+Read more [here](./NatSpec-Determination)
 
 ## Name registry contracts
 
