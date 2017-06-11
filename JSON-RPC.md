@@ -17,11 +17,12 @@ See the [JavaScript API](./JavaScript-API) for more.
 ## JSON-RPC Endpoint
 
 Default JSON-RPC endpoints:
-```
-C++: http://localhost:8545
-Go: http://localhost:8545
-Py: http://localhost:4000
-```
+
+| Client | URL |
+|---|---|
+| C++ | http://localhost:8545 |
+| Go | http://localhost:8545 |
+| Py | http://localhost:4000 |
 
 ### Go
 
