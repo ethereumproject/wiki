@@ -119,7 +119,7 @@ To solve the second issue of centralization bias, we adopt a different strategy:
 
 In Ethereum, stale block can only be included as an uncle by up to the seventh-generation descendant of one of its direct siblings, and not any block with a more distant relation. This was done for several reasons. First, unlimited GHOST would include too many complications into the calculation of which uncles for a given block are valid. Second, unlimited uncle incentivization as used in Ethereum removes the incentive for a miner to mine on the main chain and not the chain of a public attacker. Finally, calculations show that restricting to seven levels provides most of the desired effect without many of the negative consequences.
 
-* A simulator that measures centralization risks is available at https://github.com/ethereum/economic-modeling/blob/master/ghost.py
+* A simulator that measures centralization risks is available at https://github.com/ethereumproject/economic-modeling/blob/master/ghost.py
 * A high-level discussion can be found at https://blog.ethereum.org/2014/07/11/toward-a-12-second-block-time/
 
 Design decisions in our block time algorithm include:
@@ -148,7 +148,7 @@ The design goals behind the difficulty update rule are:
 * **Low memory**: the algorithm should not rely on more than a few blocks of history, and should include as few "memory variables" as possible. Assume that the last ten blocks, plus all memory variables placed in the block headers of the last ten blocks, are all that is available for the algorithm to work with
 * **Non-exploitability**: the algorithm should not excessively encourage miners to fiddle with timestamps, or mining pools to repeatedly add and remove hashpower, in an attempt to maximize their revenue
 
-We have already determined that our current algorithm is highly suboptimal on low volatility and non-exploitability, and at the very least we plan to switch the timestamps compares to be the parent and grandparent, so that miners only have the incentive to modify timestamps if they are mining two blocks in a row. Another more powerful formula with simulations is located at https://github.com/ethereum/economic-modeling/blob/master/diffadjust/blkdiff.py (the simulator uses Bitcoin mining power, but uses the per-day average for the entire day; it at one point simulates a 95% crash in a single day).
+We have already determined that our current algorithm is highly suboptimal on low volatility and non-exploitability, and at the very least we plan to switch the timestamps compares to be the parent and grandparent, so that miners only have the incentive to modify timestamps if they are mining two blocks in a row. Another more powerful formula with simulations is located at https://github.com/ethereumproject/economic-modeling/blob/master/diffadjust/blkdiff.py (the simulator uses Bitcoin mining power, but uses the per-day average for the entire day; it at one point simulates a 95% crash in a single day).
 
 ## Gas and Fees
 

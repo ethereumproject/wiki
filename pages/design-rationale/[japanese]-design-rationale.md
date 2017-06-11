@@ -321,7 +321,7 @@ Ethereumでは、無駄となったブロックはおじによってのみ含ま
 メインチェーンのマイナーにとって採掘するインセンティブを失わせることに繋がるからだ。
 最後に、多くのネガティブな影響無しに、7段階目迄に制限していることが大半の望ましい影響を及ぼしていることについての計算を示す。
 * 中央集権のリスクを測ったシミュレーターはこちらで利用可能だ。
-https://github.com/ethereum/economic-modeling/blob/master/ghost.py
+https://github.com/ethereumproject/economic-modeling/blob/master/ghost.py
 * 高度なレベルの議論はこちらで行われている。
 https://blog.ethereum.org/2014/07/11/toward-a-12-second-block-time/
 
@@ -375,7 +375,7 @@ The design goals behind the difficulty update rule are:
 もしマイナーが2つの列になったブロックのマイニングを行っているならば、
 マイナーがタイムスタンプの書き換えに対してのみインセンティブを持つようにしようとは全く考えていない。
 もう一つのシミュレーションを伴う強力な定式はこちらにある。
-https://github.com/ethereum/economic-modeling/blob/master/diffadjust/blkdiff.py (シミュレーターはビットコインのマイニングパワーを用いているが、日ごとの平均を全体に対して使っている。1つのポイントでのシミュレーションは95%1日の内にクラッシュする。）
+https://github.com/ethereumproject/economic-modeling/blob/master/diffadjust/blkdiff.py (シミュレーターはビットコインのマイニングパワーを用いているが、日ごとの平均を全体に対して使っている。1つのポイントでのシミュレーションは95%1日の内にクラッシュする。）
 
 ## GasとFee
 

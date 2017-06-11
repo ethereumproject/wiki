@@ -15,7 +15,7 @@ category:
 
 [Serpent](./%5BRomanian%5D-Serpent-programming-language-operations), un limbaj de programare high-level folosit pentru scrierea de smart-contracts. Tutorial [aici](./%5BRomanian%5D-Serpent-programming-language-operations).
 
-[LLL](https://github.com/ethereum/cpp-ethereum/wiki/LLL), Specificatii pentru limbajul low-level "Lisp-like Language" , folosit pentru definirea contractelor in clientul ethereum incepand cu PoC-3.
+[LLL](https://github.com/ethereumproject/cpp-ethereum/wiki/LLL), Specificatii pentru limbajul low-level "Lisp-like Language" , folosit pentru definirea contractelor in clientul ethereum incepand cu PoC-3.
 
 [Dagger](./%5BRomanian%5D-Dagger), Detalii despre algoritmul "proof-of-work".
 

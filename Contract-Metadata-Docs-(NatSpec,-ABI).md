@@ -41,7 +41,7 @@ Let's see how this is achieved.
 **Proposal**
 The metadocs are assumed to be in a single JSON structure called `cmd` file, that stands for _contract metadata doc_.
 
-The `cmd` file's content is hashed and content hash is registered on a name registry via a contract on the ethereum blockchain under the code hash, see https://github.com/ethereum/dapp-bin/blob/master/NatSpecReg/contract.sol _Registering_ in this context will simply mean a key value pair is recorded in an immutable contract storage as a result of a transaction sent to the registry contract.
+The `cmd` file's content is hashed and content hash is registered on a name registry via a contract on the ethereum blockchain under the code hash, see https://github.com/ethereumproject/dapp-bin/blob/master/NatSpecReg/contract.sol _Registering_ in this context will simply mean a key value pair is recorded in an immutable contract storage as a result of a transaction sent to the registry contract.
 
 This provides a public immutable authentication for contract metadata, since:
 - the authenticity of the link between the contract and metadata is secured by ethereum consensus

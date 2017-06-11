@@ -3,7 +3,7 @@ name: Ethash C API
 category: 
 ---
 
-This is just a documentation of the request of the C API described in [this PR](https://github.com/ethereum/ethash/pull/11).
+This is just a documentation of the request of the C API described in [this PR](https://github.com/ethereumproject/ethash/pull/11).
 
 ```c
 typedef int(*Callback)(unsigned);

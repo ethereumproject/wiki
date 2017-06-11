@@ -7,11 +7,11 @@ category:
 
 This guide provides a very simple and quick introduction to the Mix IDE workflow by walking you through the creation of a simple ÐApp. Once you are done with this tutorial, you will have a general knowledge of how to create and run applications in the IDE.
 
-Note that the software is in still in proof-of-concept state. Things are changing rapidly and this tutorial might not be up to date. If that is the case [please open an issue](https://github.com/ethereum/cpp-ethereum/issues) or [edit the wiki](./Mix%3A-The-DApp-IDE/_edit). 
+Note that the software is in still in proof-of-concept state. Things are changing rapidly and this tutorial might not be up to date. If that is the case [please open an issue](https://github.com/ethereumproject/cpp-ethereum/issues) or [edit the wiki](./Mix%3A-The-DApp-IDE/_edit). 
 
 ## Getting started.
 
-This tutorial assumes you have [C++ Ethereum installed](https://github.com/ethereum/cpp-ethereum/wiki).
+This tutorial assumes you have [C++ Ethereum installed](https://github.com/ethereumproject/cpp-ethereum/wiki).
 
 ## Creating a new project
 

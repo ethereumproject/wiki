@@ -34,7 +34,7 @@ And should not have any of the following flaws:
 
 ### Block algorithm
 
-A simulator of difficulty adjustment is available at https://github.com/ethereum/economic-modeling/blob/master/diffadjust/blkdiff.py .
+A simulator of difficulty adjustment is available at https://github.com/ethereumproject/economic-modeling/blob/master/diffadjust/blkdiff.py .
 
 The modified GHOST algorithm is defined [here](./White-Paper#modified-ghost-implementation).
 
@@ -64,7 +64,7 @@ The following properties are desired:
 
 ### VM
 
-* The VM implementation and the formal specifications (so called Yellow Paper) should be equivalent. The VM implementation can be found at https://github.com/ethereum/go-ethereum/tree/master/vm
+* The VM implementation and the formal specifications (so called Yellow Paper) should be equivalent. The VM implementation can be found at https://github.com/ethereumproject/go-ethereum/tree/master/vm
 * The VM should be resistant to the following attack scenarios:
   * Transactions/messages whose execution will somehow escape the VM and either reveal or modify memory or hard drive contents of the client's machine
   * Transactions/messages whose execution will cause a system crash

@@ -5,7 +5,7 @@ category:
 
 # Introduction
 
-Dapp を Ethereum 上でうごかすために、`web3` オブジェクトが使えます。これは [web3.js library](https://github.com/ethereum/web3.js)で提供されています。
+Dapp を Ethereum 上でうごかすために、`web3` オブジェクトが使えます。これは [web3.js library](https://github.com/ethereumproject/web3.js)で提供されています。
 この、まるでパーカーのフードのように、 ethereum を包み込んだライブラリのもとでは、
 ローカルのノードと
 [RPC calls](./JSON-RPC)を介して通信できます。
@@ -15,7 +15,7 @@ web3.js はすべての ethereum node と通信可能で、そのノードは RP
 `eth` オブジェクトと - `web3.eth` ( Ethereum blockchain との通信に特化したオブジェクト) と 
 `shh` オブジェクト - `web3.shh` ( Whisper 上のやりとりのためのオブジェクト) を保持します。
 時間の経過とともに、web3 プロトコル上の他のオブジェクトも紹介していくつもりです。
-使用例は [こちら](https://github.com/ethereum/web3.js/tree/master/example).
+使用例は [こちら](https://github.com/ethereumproject/web3.js/tree/master/example).
 
 web3.js の洗練された使用例につきましては、[useful Ðapp patterns](./Useful-Ðapp-Patterns)をごらんください。
 
@@ -1772,7 +1772,7 @@ Returns GlobalRegistrar object.
 
 ##### Usage
 
-see [namereg](https://github.com/ethereum/web3.js/blob/master/example/namereg.html) example
+see [namereg](https://github.com/ethereumproject/web3.js/blob/master/example/namereg.html) example
 
 ***
 

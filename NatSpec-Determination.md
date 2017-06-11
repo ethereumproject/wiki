@@ -7,7 +7,7 @@ Publishing and finding the [NatSpec] (./Ethereum-Natural-Specification-Format) d
 
 ### Trusted Content Determination
 
-The former, trusted content determination, will ultimately be accomplished through a sophisticated reputation system. In the meantime, we (the Ethereum foundation) will maintain our own curated repository of trusted NatSpec documentation hashes in a contract. The contract is trivial, just providing a mapping from contract code hash to NatSpec JSON file hash. It can be found [here](https://github.com/ethereum/dapp-bin/blob/master/NatSpecReg/contract.sol). We, alone, will retain the key updating and adding entries to this contract.
+The former, trusted content determination, will ultimately be accomplished through a sophisticated reputation system. In the meantime, we (the Ethereum foundation) will maintain our own curated repository of trusted NatSpec documentation hashes in a contract. The contract is trivial, just providing a mapping from contract code hash to NatSpec JSON file hash. It can be found [here](https://github.com/ethereumproject/dapp-bin/blob/master/NatSpecReg/contract.sol). We, alone, will retain the key updating and adding entries to this contract.
 
 This contract will have a specific address on the PoC-9 & Frontier testnet, probably referenced from the Ethereum services contract.
 

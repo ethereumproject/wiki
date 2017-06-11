@@ -71,11 +71,11 @@ If you prefer to learn by watching videos, see:
 
 ### Where can I find the main project repositories?
 
-+ [cpp-ethereum](https://github.com/ethereum/cpp-ethereum/) ([@gavofyork](https://github.com/gavofyork), [@programmerTim](https://github.com/programmerTim), [@caktux](https://github.com/caktux))
-+ [go-ethereum](https://github.com/ethereum/go-ethereum) ([@obscuren](https://github.com/obscuren), [@maran](https://github.com/maran))
-+ [pyethereum](https://github.com/ethereum/pyethereum) ([@vbuterin](https://github.com/vbuterin), [@heikoheiko](https://github.com/heikoheiko), [@chenhouwu](https://github.com/chenhouwu))
-+ [ethereumj](https://github.com/ethereum/ethereumj) ([@romanman](https://github.com/romanman), [@nicksavers](https://github.com/nicksavers))
-+ [ethereumjs-lib](https://github.com/ethereum/ethereumjs-lib) ([@ethers](https://github.com/ethers), [@wanderer](https://github.com/wanderer))
++ [cpp-ethereum](https://github.com/ethereumproject/cpp-ethereum/) ([@gavofyork](https://github.com/gavofyork), [@programmerTim](https://github.com/programmerTim), [@caktux](https://github.com/caktux))
++ [go-ethereum](https://github.com/ethereumproject/go-ethereum) ([@obscuren](https://github.com/obscuren), [@maran](https://github.com/maran))
++ [pyethereum](https://github.com/ethereumproject/pyethereum) ([@vbuterin](https://github.com/vbuterin), [@heikoheiko](https://github.com/heikoheiko), [@chenhouwu](https://github.com/chenhouwu))
++ [ethereumj](https://github.com/ethereumproject/ethereumj) ([@romanman](https://github.com/romanman), [@nicksavers](https://github.com/nicksavers))
++ [ethereumjs-lib](https://github.com/ethereumproject/ethereumjs-lib) ([@ethers](https://github.com/ethers), [@wanderer](https://github.com/wanderer))
 
 ### Where can I learn about the Ether sale and mining?
 
@@ -86,9 +86,9 @@ If you prefer to learn by watching videos, see:
 
 ### Where can I find official releases?
 
-+ [Releases for AlethZero](https://github.com/ethereum/cpp-ethereum/releases)
-+ [Releases for Mist](https://github.com/ethereum/go-ethereum/releases)
-+ [Releases for Pyethereum](https://github.com/ethereum/pyethereum/releases)
++ [Releases for AlethZero](https://github.com/ethereumproject/cpp-ethereum/releases)
++ [Releases for Mist](https://github.com/ethereumproject/go-ethereum/releases)
++ [Releases for Pyethereum](https://github.com/ethereumproject/pyethereum/releases)
 
 ### How to install development builds?
 
@@ -97,17 +97,17 @@ If you prefer to learn by watching videos, see:
 + Guides
   + [AlethZero super easy install guide for OSX](https://forum.ethereum.org/discussion/1388/alethzero-super-easy-install-guide-for-osx) ([@stephantual](https://github.com/stephantual))
   + [Go-Ethereum simple build guide for OSX](http://forum.ethereum.org/discussion/905/go-ethereum-cli-ethereal-simple-build-guide-for-osx-now-with-one-line-install) ([@stephantual](https://github.com/stephantual))
-  + [Building on Ubuntu](https://github.com/ethereum/cpp-ethereum/wiki/Building-on-Ubuntu#user-content-trusty-1404)
+  + [Building on Ubuntu](https://github.com/ethereumproject/cpp-ethereum/wiki/Building-on-Ubuntu#user-content-trusty-1404)
 + Builds
   + [Ethdev Buildbot](http://build.ethdev.com/waterfall)
 
 ### How to install the clients from source?
 
-+ [Building AlethZero (C++)](https://github.com/ethereum/cpp-ethereum/wiki)
-+ [Building Mist (Go)](https://github.com/ethereum/go-ethereum/wiki/Building-Ethereum%28Go%29)
-+ [Installing Pyethereum (Python)](https://github.com/ethereum/pyethereum#quickstart)
-+ [Installing EthereumJ (Java)](https://github.com/ethereum/ethereumj#maven)
-+ [Installing Ethereumjs-lib (JavaScript for Browser and Node)](https://github.com/ethereum/ethereumjs-lib#install)
++ [Building AlethZero (C++)](https://github.com/ethereumproject/cpp-ethereum/wiki)
++ [Building Mist (Go)](https://github.com/ethereumproject/go-ethereum/wiki/Building-Ethereum%28Go%29)
++ [Installing Pyethereum (Python)](https://github.com/ethereumproject/pyethereum#quickstart)
++ [Installing EthereumJ (Java)](https://github.com/ethereumproject/ethereumj#maven)
++ [Installing Ethereumjs-lib (JavaScript for Browser and Node)](https://github.com/ethereumproject/ethereumjs-lib#install)
 
 ## Mining
 
@@ -148,7 +148,7 @@ $ eth --force-mining --mining on [YOUR OPTIONS...]
 + Specifications
   + [The Serpent Language](./Serpent)
 + Examples
-  + [Vitalik's Serpent examples](https://github.com/ethereum/serpent/tree/master/examples)
+  + [Vitalik's Serpent examples](https://github.com/ethereumproject/serpent/tree/master/examples)
 + Tutorials
   + [Pyethereum and Serpent Programming Guide](https://blog.ethereum.org/2014/04/10/pyethereum-and-serpent-programming-guide/)
 + Videos
@@ -157,16 +157,16 @@ $ eth --force-mining --mining on [YOUR OPTIONS...]
 ### Where can I learn LLL, the Lisp-like language?
 
 + Specifications
-  + [The LLL Language](https://github.com/ethereum/cpp-ethereum/wiki/LLL-PoC-6)
+  + [The LLL Language](https://github.com/ethereumproject/cpp-ethereum/wiki/LLL-PoC-6)
 + Examples
-  + [LLL examples for PoC 6](https://github.com/ethereum/cpp-ethereum/wiki/LLL%20Examples%20for%20PoC%205)
+  + [LLL examples for PoC 6](https://github.com/ethereumproject/cpp-ethereum/wiki/LLL%20Examples%20for%20PoC%205)
 + Videos
   + [Programming Society with Asm](https://www.youtube.com/watch?v=xO1AxsYAkU8)
 
 ### Where can I learn Solidity, the JavaScript-like language?
 
 + Specifications
-  + [Solidity, Docs and ABI](https://github.com/ethereum/cpp-ethereum/wiki/Solidity%2C-Docs-and-ABI)
+  + [Solidity, Docs and ABI](https://github.com/ethereumproject/cpp-ethereum/wiki/Solidity%2C-Docs-and-ABI)
   + [Solidity Features](./Solidity-Features)
 + Tutorials
   + [Solidity Tutorial](./Solidity-Tutorial)
@@ -175,7 +175,7 @@ $ eth --force-mining --mining on [YOUR OPTIONS...]
 ### How to test contracts?
 
 + [EVM Contract Simulator](https://github.com/EtherCasts/evm-sim/) ([@EtherCasts](https://github.com/EtherCasts))
-+ [Pyethereum Tester](https://github.com/ethereum/pyethereum/blob/master/tests/test_contracts.py) ([@ethereum](https://github.com/ethereum))
++ [Pyethereum Tester](https://github.com/ethereumproject/pyethereum/blob/master/tests/test_contracts.py) ([@ethereum](https://github.com/ethereum))
 
 ### How to deploy contracts automatically?
 
@@ -184,12 +184,12 @@ $ eth --force-mining --mining on [YOUR OPTIONS...]
 ### Where to find example contracts?
 
 + Serpent
-  + [By Vitalik Buterin](https://github.com/ethereum/serpent/tree/master/examples) ([@vbuterin](https://github.com/vbuterin))
+  + [By Vitalik Buterin](https://github.com/ethereumproject/serpent/tree/master/examples) ([@vbuterin](https://github.com/vbuterin))
   + [By EtherCasts](https://github.com/EtherCasts) ([@EtherCasts](https://github.com/EtherCasts))
   + [By Rob Myers](https://github.com/robmyers/artworld-ethereum) ([@robmyers](https://github.com/robmyers))
   + [By Tyler Florez](https://github.com/qualiabyte/ethereum-contracts) ([@qualiabyte](https://github.com/qualiabyte))
 + LLL
-  + [By Gavin Wood](https://github.com/ethereum/cpp-ethereum/wiki/LLL%20Examples%20for%20PoC%205) ([@gavofyork](https://github.com/gavofyork))
+  + [By Gavin Wood](https://github.com/ethereumproject/cpp-ethereum/wiki/LLL%20Examples%20for%20PoC%205) ([@gavofyork](https://github.com/gavofyork))
   + [By Dennis Mckinnon](https://github.com/dennismckinnon/Ethereum-Contracts) ([@dennismckinnon](https://github.com/dennismckinnon))
   + [By Project Douglas](https://github.com/project-douglas/eris/tree/master/contracts) ([@project-douglas](https://github.com/project-douglas))
   + [By Doug A.](https://github.com/d11e9/g3) ([@dlle9](https://github.com/d11e9))
@@ -198,9 +198,9 @@ $ eth --force-mining --mining on [YOUR OPTIONS...]
 
 ### Where can I learn about the Ethereum APIs?
 
-+ [The PoC 6 API for C++](https://github.com/ethereum/cpp-ethereum/wiki/Client-Development-with-PoC-6)
-+ [The PoC 5 API for Go](https://github.com/ethereum/go-ethereum/wiki/PoC-5-Public-Go-API)
-+ [The PoC 6 API for QML](https://github.com/ethereum/go-ethereum/wiki/QML-PoC6-API)
++ [The PoC 6 API for C++](https://github.com/ethereumproject/cpp-ethereum/wiki/Client-Development-with-PoC-6)
++ [The PoC 5 API for Go](https://github.com/ethereumproject/go-ethereum/wiki/PoC-5-Public-Go-API)
++ [The PoC 6 API for QML](https://github.com/ethereumproject/go-ethereum/wiki/QML-PoC6-API)
 + [The PoC 7 API for JavaScript](./JavaScript-API)
 
 ### Where can I learn about ÐApp development?
@@ -211,12 +211,12 @@ $ eth --force-mining --mining on [YOUR OPTIONS...]
 
 Official
 
-+ [AlethZero GUI client (C++)](https://github.com/ethereum/cpp-ethereum/wiki/Using-AlethZero)
-+ [Eth command-line client (C++)](https://github.com/ethereum/cpp-ethereum/wiki/Using-Ethereum-CLI-Client)
-+ [LLLC Compiler (C++)](https://github.com/ethereum/cpp-ethereum/blob/develop/lllc/main.cpp)
-+ [Ethereum command-line client (Go)](https://github.com/ethereum/go-ethereum/wiki/Command-Line-Options)
-+ [Mist Browser (Go)](https://github.com/ethereum/go-ethereum)
-+ [Pyeth command-line client (Python)](https://github.com/ethereum/pyethereum#interacting-with-the-network)
++ [AlethZero GUI client (C++)](https://github.com/ethereumproject/cpp-ethereum/wiki/Using-AlethZero)
++ [Eth command-line client (C++)](https://github.com/ethereumproject/cpp-ethereum/wiki/Using-Ethereum-CLI-Client)
++ [LLLC Compiler (C++)](https://github.com/ethereumproject/cpp-ethereum/blob/develop/lllc/main.cpp)
++ [Ethereum command-line client (Go)](https://github.com/ethereumproject/go-ethereum/wiki/Command-Line-Options)
++ [Mist Browser (Go)](https://github.com/ethereumproject/go-ethereum)
++ [Pyeth command-line client (Python)](https://github.com/ethereumproject/pyethereum#interacting-with-the-network)
 + [Serpent Compiler (Python)](./Serpent)
 
 Community
@@ -233,7 +233,7 @@ Community
 
 ### Where can I find example ÐApps?
 
-+ [dapp-bin](https://github.com/ethereum/dapp-bin) ([@ethereum](https://github.com/ethereum))
++ [dapp-bin](https://github.com/ethereumproject/dapp-bin) ([@ethereum](https://github.com/ethereum))
 + [GavCoin](http://gavwood.com/gavcoin.html) ([@gavofyork](https://github.com/gavofyork))
 + [JeffCoin](https://github.com/obscuren/jeffcoin) ([@obscuren](https://github.com/obscuren))
 + [Make It Rain](https://github.com/EtherCasts/make-it-rain) ([@EtherCasts](https://github.com/EtherCasts))

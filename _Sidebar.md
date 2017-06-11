@@ -18,7 +18,7 @@
 - [Mix Tutorial](./Mix:-The-DApp-IDE)
 - [Mix Features](./Mix-Features)
 - [Serpent](./Serpent)
-- [LLL](https://github.com/ethereum/cpp-ethereum/wiki/LLL)
+- [LLL](https://github.com/ethereumproject/cpp-ethereum/wiki/LLL)
 - [Mutan](https://github.com/obscuren/mutan)
 
 ### ÐΞV Technologies

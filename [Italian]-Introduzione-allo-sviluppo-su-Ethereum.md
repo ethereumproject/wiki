@@ -58,7 +58,7 @@ Mentre spiegheremo i vari temi dello sviluppo delle decentralized apps illustrer
 ### Ulteriori letture
 
 * [Libro Bianco di Ethereum - tradotto in Italiano ](./%5BItalian%5D-Libro-Bianco)
-* [Yellow Paper di Ethereum, la specificazione formale - inglese](https://github.com/ethereum/yellowpaper)
+* [Yellow Paper di Ethereum, la specificazione formale - inglese](https://github.com/ethereumproject/yellowpaper)
 * [Blog di Ethereum - inglese](https://blog.ethereum.org/)
 
 _traduzione di M.Terzi - @terzim -  [LinkedIn](https://uk.linkedin.com/in/massimilianoterzi)_

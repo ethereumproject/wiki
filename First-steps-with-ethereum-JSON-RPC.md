@@ -11,7 +11,7 @@ category:
 ##### manual installation 
 
 ```bash
-git clone https://github.com/ethereum/cpp-ethereum
+git clone https://github.com/ethereumproject/cpp-ethereum
 cd cpp-ethereum
 mkdir build
 cd build
@@ -21,7 +21,7 @@ make -j 4
 
 ##### automatic installation 
 
-build instructions are [here](https://github.com/ethereum/cpp-ethereum/wiki/Installing-clients)
+build instructions are [here](https://github.com/ethereumproject/cpp-ethereum/wiki/Installing-clients)
 
 
 #### 2. run eth (headless client)

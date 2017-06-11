@@ -23,12 +23,12 @@ Ethereum の基本概念の理解といたしましては [ethereum whitepaper (
 
 ## 仕様
 - [Glossary](./Glossary) と [FAQ](./FAQ) は必ずご覧になってください。  
-- [C++言語](https://github.com/ethereum/cpp-ethereum/wiki) と [Go言語](https://github.com/ethereum/go-ethereum/wiki) による実装についての wiki です。 ( Python と Javascript 言語につきましてはもうしばらくお待ちください)
+- [C++言語](https://github.com/ethereumproject/cpp-ethereum/wiki) と [Go言語](https://github.com/ethereumproject/go-ethereum/wiki) による実装についての wiki です。 ( Python と Javascript 言語につきましてはもうしばらくお待ちください)
 
 ## ダウンロード
 開発中ですが PoC-9 code は以下の git レポジトリの branch からダウンロード可能です:
-- https://github.com/ethereum/cpp-ethereum
-- https://github.com/ethereum/go-ethereum
-- https://github.com/ethereum/pyethereum
+- https://github.com/ethereumproject/cpp-ethereum
+- https://github.com/ethereumproject/go-ethereum
+- https://github.com/ethereumproject/pyethereum
 
 最新情報は [build server](http://build.ethdev.com/console) をご覧ください。

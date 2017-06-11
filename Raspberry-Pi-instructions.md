@@ -19,7 +19,7 @@ Log in and type `passwd <user>` to update the password for each user.
 
 
 
-Currently the go client (geth) and the cpp client (eth) are preinstalled. You can find instruction on how to use them here: https://github.com/ethereum/go-ethereum/wiki/Command-Line-Options and here: https://github.com/ethereum/cpp-ethereum/wiki/Using-Ethereum-CLI-Client. But executing eth/geth with `--help` will give you more up-to-date information on how to use them.
+Currently the go client (geth) and the cpp client (eth) are preinstalled. You can find instruction on how to use them here: https://github.com/ethereumproject/go-ethereum/wiki/Command-Line-Options and here: https://github.com/ethereumproject/cpp-ethereum/wiki/Using-Ethereum-CLI-Client. But executing eth/geth with `--help` will give you more up-to-date information on how to use them.
 Also eth-netstats is installed. You can find instructions in how to use it here: ./Network-Status.
 It is used to display your client on the centralized network server (http://stats.ethdev.com/).
 In order to give your client a different name, choose your favorite command line text editor and change the `INSTANCE_NAME` parameter in `~/eth-net-intelligence-api/app.json` to whatever you like.
@@ -78,10 +78,10 @@ We start with a ArchLinux system with 2 GB swap. Instructions on how to get ther
 http://archlinuxarm.org/forum/viewtopic.php?f=60&t=8366
 
 ### go-ethereum
-[Installation instructions for ARM](https://github.com/ethereum/go-ethereum/wiki/Installation-Instructions-for-ARM)
+[Installation instructions for ARM](https://github.com/ethereumproject/go-ethereum/wiki/Installation-Instructions-for-ARM)
 
 ### cpp-ethereum
-First we install all necessary libaries as described here https://github.com/ethereum/cpp-ethereum/wiki/Building-on-ArchLinux (but without the qt libs):
+First we install all necessary libaries as described here https://github.com/ethereumproject/cpp-ethereum/wiki/Building-on-ArchLinux (but without the qt libs):
 
 These are the required packages from the official repositories:
 ```
@@ -111,10 +111,10 @@ makepkg -si
 ```
 #### Building the client
 
-The instructions for building the client from here and on are identical with Ubuntu so the reader should refer to the [relevant page](https://github.com/ethereum/cpp-ethereum/wiki/Building-on-Ubuntu#choose-your-source). but use `cmake .. -DBUNDLE=minimal -DETHASHCL=0 -DEVMJIT=0` instead.
+The instructions for building the client from here and on are identical with Ubuntu so the reader should refer to the [relevant page](https://github.com/ethereumproject/cpp-ethereum/wiki/Building-on-Ubuntu#choose-your-source). but use `cmake .. -DBUNDLE=minimal -DETHASHCL=0 -DEVMJIT=0` instead.
 
 Resources:
 
 http://archlinuxarm.org/forum/viewtopic.php?f=60&t=8366
 http://archlinuxarm.org/forum/viewtopic.php?f=31&t=3119
-https://github.com/ethereum/cpp-ethereum/wiki/Building-on-ArchLinux
+https://github.com/ethereumproject/cpp-ethereum/wiki/Building-on-ArchLinux

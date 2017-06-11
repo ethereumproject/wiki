@@ -5,7 +5,7 @@ category:
 
 # Introduction
 
-Swarm Hash (a.k.a. [`bzzhash`](https://github.com/ethersphere/go-ethereum/tree/bzz/bzz/bzzhash)) is a Merkle tree hash designed for the purpose of efficient storage and retrieval in content-addressed storage, both local and networked. While it is used in [Swarm](https://github.com/ethereum/go-ethereum/wiki/Swarm---distributed-preimage-archive), there is nothing Swarm-specific in it and the authors recommend it as a drop-in substitute of sequential-iterative hash functions (like SHA3) whenever one is used for referencing integrity-sensitive content, as it constitutes an improvement in terms of performance and usability without compromising security. For instance in the [URL Hint Protocol](./URL-Hint-Protocol).
+Swarm Hash (a.k.a. [`bzzhash`](https://github.com/ethersphere/go-ethereum/tree/bzz/bzz/bzzhash)) is a Merkle tree hash designed for the purpose of efficient storage and retrieval in content-addressed storage, both local and networked. While it is used in [Swarm](https://github.com/ethereumproject/go-ethereum/wiki/Swarm---distributed-preimage-archive), there is nothing Swarm-specific in it and the authors recommend it as a drop-in substitute of sequential-iterative hash functions (like SHA3) whenever one is used for referencing integrity-sensitive content, as it constitutes an improvement in terms of performance and usability without compromising security. For instance in the [URL Hint Protocol](./URL-Hint-Protocol).
 
 In particular, it can take advantage of parallelisms (including SMP and massively-parallel architectures such as GPU's) for faster calculation and verification, can be used to verify the integrity of partial content without having to transmit all of it. Proofs of security to the underlying hash function carry over to Swarm Hash.
 
@@ -39,4 +39,4 @@ However, it might open the door for different applications where this does not c
 - [Length extension attack on wikipedia](http://en.wikipedia.org/wiki/Length_extension_attack)
 - [IETF RFC4880](https://tools.ietf.org/html/rfc4880)
 - [bzzhash code](https://github.com/ethersphere/go-ethereum/tree/bzz/bzz/bzzhash)
-- [Swarm documentation and draft specs](https://github.com/ethereum/go-ethereum/wiki/Swarm---distributed-preimage-archive)
+- [Swarm documentation and draft specs](https://github.com/ethereumproject/go-ethereum/wiki/Swarm---distributed-preimage-archive)
