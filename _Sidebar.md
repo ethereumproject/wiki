@@ -36,9 +36,9 @@
 - [Solidity, Docs & ABI](./Solidity,-Docs-and-ABI)
 - [NatSpec Format](./Ethereum-Natural-Specification-Format)
 - [Contract ABI](./Ethereum-Contract-ABI)
-- [Bad Block Reporting](http://github.com/ethereum/wiki/wiki/Bad-Block-Reporting)
-- [Bad Chain Canary](http://github.com/ethereum/wiki/wiki/Bad-Chain-Canary)
-- [Extra Data](http://github.com/ethereum/wiki/wiki/Extra-Data)
+- [Bad Block Reporting](./Bad-Block-Reporting)
+- [Bad Chain Canary](./Bad-Chain-Canary)
+- [Extra Data](./Extra-Data)
 - [Brain Wallet](./Brain-Wallet)
 
 ### Ethash/Dashimoto
