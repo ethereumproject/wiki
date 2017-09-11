@@ -59,9 +59,7 @@
 ### Ethereum Classic Clients
 - [Geth (Go)](https://github.com/ethereumproject/go-ethereum)
 - [Parity (Rust)](https://github.com/paritytech/parity)
-- [AlethZero (C++)](./AlethZero)
 - [pyeth (Python)](./Pyeth)
-
 
 ### Concerning Whisper
 - [Whisper Proposal](./Whisper)
