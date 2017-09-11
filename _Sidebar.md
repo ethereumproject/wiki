@@ -57,9 +57,11 @@
 - [Raspberry Pi](./Raspberry-Pi-instructions)
 
 ### Ethereum Clients
-- [AlethZero (C++)](./AlethZero)
+- [Geth (Go)](./Ethereal) 
 - [Mist (Go)](./Ethereal) 
+- [AlethZero (C++)](./AlethZero)
 - [pyeth (Python)](./Pyeth) 
+
 
 ### Concerning Whisper
 - [Whisper Proposal](./Whisper)
