@@ -7,17 +7,17 @@ category:
 
 This guide provides a very simple and quick introduction to the Mix IDE workflow by walking you through the creation of a simple ÐApp. Once you are done with this tutorial, you will have a general knowledge of how to create and run applications in the IDE.
 
-Note that the software is in still in proof-of-concept state. Things are changing rapidly and this tutorial might not be up to date. If that is the case [please open an issue](https://github.com/ethereum/cpp-ethereum/issues) or [edit the wiki](https://github.com/ethereum/wiki/wiki/Mix%3A-The-DApp-IDE/_edit). 
+Note that the software is in still in proof-of-concept state. Things are changing rapidly and this tutorial might not be up to date. If that is the case [please open an issue](https://github.com/ethereumproject/cpp-ethereum/issues) or [edit the wiki](./Mix%3A-The-DApp-IDE/_edit). 
 
 ## Getting started.
 
-This tutorial assumes you have [C++ Ethereum installed](https://github.com/ethereum/cpp-ethereum/wiki).
+This tutorial assumes you have [C++ Ethereum installed](https://github.com/ethereumproject/cpp-ethereum/wiki).
 
 ## Creating a new project
 
 Let's create a simple ÐApp that will allow user to store and query personal movie ratings.
 
-In the IDE, choose `File > New Project`. Enter the project name "MovieRatings" and a path for the project file. To the left there is a project items list with two items added by default: Contract and index.html. Contract contains [Solidity](https://github.com/ethereum/wiki/wiki/Solidity-Tutorial) contract code, and index.html is for the front-end. You can add new contract files to the project using file menu. All files will be copied to the project directory.
+In the IDE, choose `File > New Project`. Enter the project name "MovieRatings" and a path for the project file. To the left there is a project items list with two items added by default: Contract and index.html. Contract contains [Solidity](./Solidity-Tutorial) contract code, and index.html is for the front-end. You can add new contract files to the project using file menu. All files will be copied to the project directory.
 
 Select Contract and enter the text for the rating contract:
 
@@ -30,7 +30,7 @@ Select Contract and enter the text for the rating contract:
 	}
 ```
 
-Check [Solidity tutorial](https://github.com/ethereum/wiki/wiki/Solidity-Tutorial) for solidity reference.
+Check [Solidity tutorial](./Solidity-Tutorial) for solidity reference.
 
 Now select `index.html` and enter the following html code:
 ```html
@@ -68,14 +68,14 @@ Now select `index.html` and enter the following html code:
 	</html>
 ```
 Note that Mix exposes the following objects into the global window context:
-* [`web3`](https://github.com/ethereum/wiki/wiki/JavaScript-API#web3) - Ethereum JavaScript API 
+* [`web3`](./JavaScript-API#web3) - Ethereum JavaScript API 
 
 * `contracts` - A collection of contract objects. A key to the collection is the contract name. A value is an object with the following properties:
  * `contract` - Contract object instance (created as in `web3.eth.contract`)
  * `address` - Contract address from the last deployed state (see below)
  * `interface` - Contract ABI
 
-Check the [JavaScript API Reference](https://github.com/ethereum/wiki/wiki/JavaScript-API) for further information.
+Check the [JavaScript API Reference](./JavaScript-API) for further information.
 
 Select `File > Save` to save project files. You should see the web preview in the web preview pane.
 

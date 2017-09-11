@@ -5,7 +5,7 @@ category:
 
 Serpent is one of the high-level programming languages used to write Ethereum contracts. The language, as suggested by its name, is designed to be very similar to Python; later versions may even eventually come to target the entire [RPython spec](http://pypy.readthedocs.org/en/latest/coding-guide.html#rpython-definition). The language is designed to be maximally clean and simple, combining many of the efficiency benefits of a low-level language with ease-of-use in programming style. The latest version of the Serpent compiler, available [on github](http://github.com/ethereum/serpent), is written in C++, allowing it to be easily included in any client, and works by compiling the code first to LLL then to EVM; thus, if you like LLL, a possible intermediate option is to write Serpent, compile it to LLL, and then hand-tweak the LLL at the end.
 
-This tutorial assumes basic knowledge of how Ethereum works, including the concept of blocks, transactions, contracts and messages and the fact that contracts take a byte array as input and provide a byte array as output. If you do not, then go [here](https://github.com/ethereum/wiki/wiki/Ethereum-Development-Tutorial) for a basic tutorial.
+This tutorial assumes basic knowledge of how Ethereum works, including the concept of blocks, transactions, contracts and messages and the fact that contracts take a byte array as input and provide a byte array as output. If you do not, then go [here](./Ethereum-Development-Tutorial) for a basic tutorial.
 
 ### Differences Between Serpent and Python
 
@@ -24,7 +24,7 @@ In order to install the Serpent python library and executable do:
 
     pip install ethereum-serpent
 
-[Install the cpp-ethereum cli tools](https://github.com/ethereum/cpp-ethereum/wiki) to run the sc commands in the tutorial
+[Install the cpp-ethereum cli tools](https://github.com/ethereumproject/cpp-ethereum/wiki) to run the sc commands in the tutorial
 
 If you want a library you can directly call from C++, instead do:
 
@@ -41,7 +41,7 @@ Now, let's write our first contract. Paste the following into a file called "mul
 
 This contract is a simple one line of code. The first thing to point out is that Serpent sees message data, memory and output in 32-byte chunks; `msg.data[0]` returns bytes 0-31 of the input, `msg.data[5]` returns bytes 160-191, etc, and `return(202020)` returns the value 202020 encoded in binary form padded to 32 bytes. From now on, these mechanics will be assumed; "the zeroth data field" will be synonymous with "bytes 0-31 of the input" and "returns three values a,b,c" will be synonymous with "returns 96 bytes consisting of the values a, b and c, each padded to 32 bytes".
 
-Note that the Serpent compiler (included in the [cpp-ethereum toolkit](https://github.com/ethereum/cpp-ethereum)) includes some tools to make this conversion convenient; `sc encode_datalist "1 2 3"` gives:
+Note that the Serpent compiler (included in the [cpp-ethereum toolkit](https://github.com/ethereumproject/cpp-ethereum)) includes some tools to make this conversion convenient; `sc encode_datalist "1 2 3"` gives:
 
     000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000003
 
@@ -76,7 +76,7 @@ Alternatively, you can compile to LLL (the compiler compiles through LLL anyway,
 
 This shows you the machinery that is going on inside. As with most contracts, the outermost layer of code exists only to copy the data of the inner code during initialization and return it, since the code returned during initialization is the code that will be executed every time the contract is called; in the EVM you can see this with the `CODECOPY` opcode, and in LLL this corresponds to the `lll` meta-operation. In the innermost layer, we take bytes 0-31 from the input, multiply that value by two, and save it in a temp variable called `_temp4_1`. We then supply the memory address of that variable, and the length 32, to the `RETURN` opcode. Note that, when dealing with message and memory data, LLL deals not with 32-byte chunks but with bytes directly, so the conversion needs to introduce these more low-level mechanics. `msg.data[1]`, for examples, is translated into `(calldataload 32)`, and `msg.data[3]` into `(calldataload 96)`.
 
-Now, what if you want to actually run the contract? That is where [pyethereum](https://github.com/ethereum/pyethereum) comes in. Open up a Python console in the same directory, and run:
+Now, what if you want to actually run the contract? That is where [pyethereum](https://github.com/ethereumproject/pyethereum) comes in. Open up a Python console in the same directory, and run:
 
     > from pyethereum import tester as t
     > s = t.state()
@@ -142,7 +142,7 @@ Another, similar, operation is `(inset 'filename')`, which simply puts code into
 
 ### Miscellaneous
 
-Additional Serpent coding examples can be found here: https://github.com/ethereum/serpent/tree/master/examples
+Additional Serpent coding examples can be found here: https://github.com/ethereumproject/serpent/tree/master/examples
 
 The three other useful features in the tester environment are:
 

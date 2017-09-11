@@ -65,7 +65,7 @@ Finalising command-line interface and polishing Mist components in preparation f
 
 **What progress has been made in the last two weeks?**	
 * adding rlpx
- + Wrote DHT code (https://github.com/ethereum/ethereumjs-dht)
+ + Wrote DHT code (https://github.com/ethereumproject/ethereumjs-dht)
 * Testing
  + Fixed a several VM bugs caught be the tests
 * Finalized a new ethereumjs-lib version
@@ -232,7 +232,7 @@ Perhaps proper strong typing, we'll see. But ultimately I would like to see serp
  + Connect clients
 
 **What progress has been made in the last two weeks?**	
-* finalized log event spec (for the first scenarios) https://github.com/ethereum/system-testing/wiki/Log-Events
+* finalized log event spec (for the first scenarios) https://github.com/ethereumproject/system-testing/wiki/Log-Events
 * added support for multiple clients
 * added  go client
 * first working scenarios (start/connect clients)
@@ -245,7 +245,7 @@ Perhaps proper strong typing, we'll see. But ultimately I would like to see serp
 * Automatic triggering of all scenarios based on new buildbot builds
 * Automatic notification of devs in case of failures 
 
-Later advanced scenarios as listed here: https://github.com/ethereum/system-testing/issues?q=is%3Aopen+is%3Aissue+label%3A%22test+scenario%22
+Later advanced scenarios as listed here: https://github.com/ethereumproject/system-testing/issues?q=is%3Aopen+is%3Aissue+label%3A%22test+scenario%22
 
 ###Testing
 
@@ -253,7 +253,7 @@ Later advanced scenarios as listed here: https://github.com/ethereum/system-test
 After the creation of the tools for the block tests, I am now actually writing different tests to ensure that all clients have the same definition on a valid block (in form of an RLP). 
 
 **What progress has been made in the last two weeks?**	
-Beside the creation of some transaction tests, Block tests have been added (https://github.com/ethereum/tests/wiki/Block-Tests).   
+Beside the creation of some transaction tests, Block tests have been added (https://github.com/ethereumproject/tests/wiki/Block-Tests).   
 
 **What are the next steps?**  
 I will add Blockchain tests, which probably will be the last type of tests. With this we have VM tests, state tests, transaction tests, block tests and blockchain tests. This will be sufficient to test almost eveything written in the YP.

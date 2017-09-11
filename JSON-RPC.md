@@ -11,17 +11,18 @@ category:
 
 ## JavaScript API
 
-To talk to an ethereum node from inside a JavaScript application use the [web3.js](https://github.com/ethereum/web3.js) library, which gives an convenient interface for the RPC methods.
-See the [JavaScript API](https://github.com/ethereum/wiki/wiki/JavaScript-API) for more.
+To talk to an ethereum node from inside a JavaScript application use the [web3.js](https://github.com/ethereumproject/web3.js) library, which gives an convenient interface for the RPC methods.
+See the [JavaScript API](./JavaScript-API) for more.
 
 ## JSON-RPC Endpoint
 
 Default JSON-RPC endpoints:
-```
-C++: http://localhost:8545
-Go: http://localhost:8545
-Py: http://localhost:4000
-```
+
+| Client | URL |
+|---|---|
+| C++ | http://localhost:8545 |
+| Go | http://localhost:8545 |
+| Py | http://localhost:4000 |
 
 ### Go
 
@@ -42,7 +43,7 @@ If accessing the RPC from a browser, CORS will need to be enabled with the appro
 geth --rpc --rpccorsdomain "http://localhost:3000"
 ```
 
-The JSON RPC can also be started from the [geth console](https://github.com/ethereum/go-ethereum/wiki/JavaScript-Console) using the `admin.startRPC(addr, port)` command.
+The JSON RPC can also be started from the [geth console](https://github.com/ethereumproject/go-ethereum/wiki/JavaScript-Console) using the `admin.startRPC(addr, port)` command.
 
 
 ### C++
@@ -91,7 +92,7 @@ When encoding **UNFORMATTED DATA** (byte arrays, account addresses, hashes, byte
 - WRONG: 0xf0f0f (must be even number of digits)
 - WRONG: 004200 (must be prefixed 0x)
 
-Currently [cpp-ethereum](https://github.com/ethereum/cpp-ethereum) and [go-ethereum](https://github.com/ethereum/go-ethereum) provides JSON-RPC communication only over http.
+Currently [cpp-ethereum](https://github.com/ethereumproject/cpp-ethereum) and [go-ethereum](https://github.com/ethereumproject/go-ethereum) provides JSON-RPC communication only over http.
 
 ## The default block parameter
 
@@ -1148,6 +1149,8 @@ params: [
   - `gasPrice`: `QUANTITY` - gas price provided by the sender in Wei.
   - `gas`: `QUANTITY` - gas provided by the sender.
   - `input`: `DATA` - the data send along with the transaction.
+  - `replayProtected`: `BOOL` - replay protection (EIP-155)
+  - `chainId`: `QUANTITY` - chain id if `replayProtected: true`, otherwise empty
 
 ##### Example
 ```js
@@ -1170,6 +1173,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"eth_getTransactionByHash","param
     "gas": "0x7f110" // 520464
     "gasPrice":"0x09184e72a000",
     "input":"0x603880600c6000396000f300603880600c6000396000f3603880600c6000396000f360",
+    "replayProtected": false
   }
 }
 ```

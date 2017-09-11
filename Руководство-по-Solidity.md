@@ -1,8 +1,8 @@
 _исходный текст [Solidity Tutorial](https://ethereum.github.io/solidity/docs/home/), 05.10.2015_
 ***
-Solidity - это высокоуровневый язык для виртуальной машины Ethereum с синтаксисом, похожим на JavaScript. Это учебное руководство обеспечивает основное введение в Solidity и предполагает некоторое знание Виртуальной машины Ethereum и программирования в целом. Оно не касается таких функций как [естественная спецификация языка](https://github.com/ethereum/wiki/wiki/Solidity-Tutorial/Ethereum-Natural-Specification-Format) или формальная верификация и не является заключительной спецификацией языка.
+Solidity - это высокоуровневый язык для виртуальной машины Ethereum с синтаксисом, похожим на JavaScript. Это учебное руководство обеспечивает основное введение в Solidity и предполагает некоторое знание Виртуальной машины Ethereum и программирования в целом. Оно не касается таких функций как [естественная спецификация языка](./Solidity-Tutorial/Ethereum-Natural-Specification-Format) или формальная верификация и не является заключительной спецификацией языка.
 
-Можно начать использовать [Solidity в браузере](http://chriseth.github.io/cpp-ethereum) без потребности загружать или компилировать что-либо. Это приложение только поддерживает компиляцию - если Вы хотите выполнить код или ввести его в блокчейн, необходимо использовать клиент, такой как например [Geth](https://github.com/ethereum/go-ethereum) или [AlethZero](https://github.com/ethereum/alethzero).
+Можно начать использовать [Solidity в браузере](http://chriseth.github.io/cpp-ethereum) без потребности загружать или компилировать что-либо. Это приложение только поддерживает компиляцию - если Вы хотите выполнить код или ввести его в блокчейн, необходимо использовать клиент, такой как например [Geth](https://github.com/ethereumproject/go-ethereum) или [AlethZero](https://github.com/ethereumproject/alethzero).
 
 
 **Быстрые ссылки:**
@@ -1076,7 +1076,7 @@ Here, the call to `Deposit` will behave identical to
 
 ### Additional Resources for Understanding Events:
 
-- Javascript documentation: <https://github.com/ethereum/wiki/wiki/JavaScript-API#contract-events>
+- Javascript documentation: <./JavaScript-API#contract-events>
 - Example usage of events: <https://github.com/debris/smart-exchange/blob/master/lib/contracts/SmartExchange.sol>
 - How to access them in js: <https://github.com/debris/smart-exchange/blob/master/lib/exchange_transactions.js>
 

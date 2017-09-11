@@ -17,11 +17,11 @@ Ci sono tre programmi che ogni sviluppatore dovrebbe scaricare – Alethzero, Mi
 
 Impostare un ambiente di sviluppo dovrebbe essere abbastanza semplice per chiunque ha mai progettato una pagina web prima d’ora – abbiamo tre programmi specifici che dovreste scaricare: 
 
-In primo luogo, [scaricate](https://github.com/ethereum/cpp-ethereum/wiki) l’ultima versione stabile di Alethzero, il nostro client scritto in C++, e installatelo sul vostro sistema operativo. Se avete problemi con l’ultima versione stabile di sviluppo, provate a passare alla versione cutting edge, che dovrebbe risolvere alcuni dei problemi. Se invece scegliete di fare un build della vostra versione, allora le istruzioni sono qui.
+In primo luogo, [scaricate](https://github.com/ethereumproject/cpp-ethereum/wiki) l’ultima versione stabile di Alethzero, il nostro client scritto in C++, e installatelo sul vostro sistema operativo. Se avete problemi con l’ultima versione stabile di sviluppo, provate a passare alla versione cutting edge, che dovrebbe risolvere alcuni dei problemi. Se invece scegliete di fare un build della vostra versione, allora le istruzioni sono qui.
 
-In secondo luogo, installate [Mix](https://github.com/ethereum/cpp-ethereum/releases) il nostro ambiente di sviluppo integrato disponibile per Windows e Mac. Se utilizzate Linux, seguite le istruzioni qui per installare Mix.
+In secondo luogo, installate [Mix](https://github.com/ethereumproject/cpp-ethereum/releases) il nostro ambiente di sviluppo integrato disponibile per Windows e Mac. Se utilizzate Linux, seguite le istruzioni qui per installare Mix.
 
-Infine, installate [Mist](https://github.com/ethereum/go-ethereum#automated-dev-builds) per testare le vostre Dapps e calibrare i vostri front-end a mano a mano che li sviluppate.
+Infine, installate [Mist](https://github.com/ethereumproject/go-ethereum#automated-dev-builds) per testare le vostre Dapps e calibrare i vostri front-end a mano a mano che li sviluppate.
 
 ## Extras
 

@@ -3,11 +3,11 @@ name: Serpent
 category: 
 ---
 
-See https://github.com/ethereum/wiki/wiki/Serpent-1.0-(old) for Serpent 1.0.
+See ./Serpent-1.0-(old) for Serpent 1.0.
 
 Serpent is one of the high-level programming languages used to write Ethereum contracts. The language, as suggested by its name, is designed to be very similar to Python; it is intended to be maximally clean and simple, combining many of the efficiency benefits of a low-level language with ease-of-use in programming style, and at the same time adding special domain-specific features for contract programming. The latest version of the Serpent compiler, available [on github](http://github.com/ethereum/serpent), is written in C++, allowing it to be easily included in any client.
 
-This tutorial assumes basic knowledge of how Ethereum works, including the concept of blocks, transactions, contracts and messages and the fact that contracts take a byte array as input and provide a byte array as output. If you do not, then go [here](https://github.com/ethereum/wiki/wiki/Ethereum-Development-Tutorial) for a basic tutorial.
+This tutorial assumes basic knowledge of how Ethereum works, including the concept of blocks, transactions, contracts and messages and the fact that contracts take a byte array as input and provide a byte array as output. If you do not, then go [here](./Ethereum-Development-Tutorial) for a basic tutorial.
 
 ### Differences Between Serpent and Python
 
@@ -95,7 +95,7 @@ Note that you can have multiple functions with the same name, if they take diffe
 
 The letter `i` is meant for integers, and for fixed-length (up to 32 byte) strings (which are treated the same as integers in Serpent and EVM). Use the letter `s` for variable-length string arguments, and `a` for arrays; more on these later.
 
-Now, what if you want to actually run the contract? That is where [pyethereum](https://github.com/ethereum/pyethereum) comes in. Open up a Python console in the same directory, and run:
+Now, what if you want to actually run the contract? That is where [pyethereum](https://github.com/ethereumproject/pyethereum) comes in. Open up a Python console in the same directory, and run:
 
     >>> from ethereum import tester as t
     >>> s = t.state()
@@ -385,7 +385,7 @@ Or to take the max of an array:
 
     x = maxarray([1, 9, 5, 6, 2, 4]:6)
 
-For a highly contrived example of just how powerful macros can be, see https://github.com/ethereum/serpent/blob/poc7/examples/peano.se
+For a highly contrived example of just how powerful macros can be, see https://github.com/ethereumproject/serpent/blob/poc7/examples/peano.se
 
 Note that macros are not functions; they are copied into code every time they are used. Hence, if you have a long macro, you may instead want to make the macro call an actual function. Additionally, note that the dollar signs on variables are important; if you omit a dollar sign in the pattern $a then the macro will only match a variable actually called a. You can also create dollar sign variables that are in the substitution pattern, but not the search pattern; this will generate a variable with a random prefix each instance of the macro. You can also create new variables without a dollar sign inside a substitution pattern, but then the same variable will be shared across all instances of the pattern and with uses of that variable outside the pattern.
 
@@ -426,11 +426,11 @@ An excellent compliment to macros is Serpent's ghetto type system, which can be 
     c = b * b
     return(unfloat(c))
 
-This returns 156, the integer portion of 12.5^2. A purely integer-based version of this code would have simply returned 144. An interesting use case would be rewriting the [elliptic curve signature pubkey recovery code](https://github.com/ethereum/serpent/blob/df0aa0e1285d7667d4a0cc81b1e11e0abb31fff3/examples/ecc/jacobian_add.se) using types in order to make the code neater by making all additions and multiplications implicitly modulo P, or using [long integer types](https://github.com/ethereum/serpent/blob/poc7/examples/long_integer_macros.se) to do RSA and other large-value-based cryptography in EVM code.
+This returns 156, the integer portion of 12.5^2. A purely integer-based version of this code would have simply returned 144. An interesting use case would be rewriting the [elliptic curve signature pubkey recovery code](https://github.com/ethereumproject/serpent/blob/df0aa0e1285d7667d4a0cc81b1e11e0abb31fff3/examples/ecc/jacobian_add.se) using types in order to make the code neater by making all additions and multiplications implicitly modulo P, or using [long integer types](https://github.com/ethereumproject/serpent/blob/poc7/examples/long_integer_macros.se) to do RSA and other large-value-based cryptography in EVM code.
 
 ### Miscellaneous
 
-Additional Serpent coding examples can be found here: https://github.com/ethereum/serpent/tree/master/examples
+Additional Serpent coding examples can be found here: https://github.com/ethereumproject/serpent/tree/master/examples
 
 The three other useful features in the tester environment are:
 

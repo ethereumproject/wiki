@@ -102,7 +102,7 @@ Solidity 言語では、returns のとる引数には名前がついていて、
 
 
 一行コメント (`//`) と 複数行コメント (`/*...*/`) が使えます。
-トリプルスラッシュのコメント (`///`) を用いると、[NatSpec](https://github.com/ethereum/wiki/wiki/Natspec-Example)を導入することができますが、ここでは詳しく述べません。
+トリプルスラッシュのコメント (`///`) を用いると、[NatSpec](./Natspec-Example)を導入することができますが、ここでは詳しく述べません。
 
 
 
@@ -813,7 +813,7 @@ Here, the call to `Deposit` will behave identical to
 
 ### Additional Resources for Understanding Events:
 
-- Javascript documentation: <https://github.com/ethereum/wiki/wiki/JavaScript-API#contract-events>
+- Javascript documentation: <./JavaScript-API#contract-events>
 - Example usage of events: <https://github.com/debris/smart-exchange/blob/master/lib/contracts/SmartExchange.sol>
 - How to access them in js: <https://github.com/debris/smart-exchange/blob/master/lib/exchange_transactions.js>
 

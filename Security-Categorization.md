@@ -3,7 +3,7 @@ name: Security Categorization
 category: 
 ---
 
-See also: [https://github.com/ethereum/wiki/wiki/Design-Rationale](https://github.com/ethereum/wiki/wiki/Design-Rationale), for descriptions of potentially counterintuitive design decisions in Ethereum.
+See also: [./Design-Rationale](./Design-Rationale), for descriptions of potentially counterintuitive design decisions in Ethereum.
 
 The purpose of this document is to attempt to create a taxonomy of key security properties that we are targeting for the Ethereum protocol, implementation and materials to have at launch time, as well as provide supplementary information where needed for each one.
 
@@ -16,7 +16,7 @@ The purpose of this document is to attempt to create a taxonomy of key security 
 
 ### Proof of Work
 
-The working spec description of Dagger Hashimoto is available at  [https://github.com/ethereum/wiki/wiki/Ethash](https://github.com/ethereum/wiki/wiki/Ethash)
+The working spec description of Dagger Hashimoto is available at  [./Ethash](./Ethash)
 
 The algorithm is intended to have the following key properties:
 
@@ -34,9 +34,9 @@ And should not have any of the following flaws:
 
 ### Block algorithm
 
-A simulator of difficulty adjustment is available at https://github.com/ethereum/economic-modeling/blob/master/diffadjust/blkdiff.py .
+A simulator of difficulty adjustment is available at https://github.com/ethereumproject/economic-modeling/blob/master/diffadjust/blkdiff.py .
 
-The modified GHOST algorithm is defined [here](https://github.com/ethereum/wiki/wiki/White-Paper#modified-ghost-implementation).
+The modified GHOST algorithm is defined [here](./White-Paper#modified-ghost-implementation).
 
 The following properties are desired:
 
@@ -49,7 +49,7 @@ The following properties are desired:
 
 ### Gas economics
 
-* The floating gas limit should achieve the compatibility objectives described in https://github.com/ethereum/wiki/wiki/White-Paper#fees
+* The floating gas limit should achieve the compatibility objectives described in ./White-Paper#fees
 * There should not exist a way for a transaction to get itself executed and spend large amounts of computational resources on many nodes without paying for gas
     * The following is an example vulnerability: a miner can create a transaction A that spends a very large amount of gas (eg. ~gaslimit * 0.99) running useless computation. That miner then creates a transaction B with the same nonce that has no effect, and tries to mine a block containing B. If a miner produces a block containing B, it broadcasts A, forcing all other nodes on the network to waste time processing A, even though A actually getting accepted is nearly impossible since B is already published in a block.
 * There should not be any kind of of perverse incentive in the way gas costs work on the high level (eg. how gas is passed from parent to child message, how gas is refunded, exception reversions, etc)
@@ -64,7 +64,7 @@ The following properties are desired:
 
 ### VM
 
-* The VM implementation and the formal specifications (so called Yellow Paper) should be equivalent. The VM implementation can be found at https://github.com/ethereum/go-ethereum/tree/master/vm
+* The VM implementation and the formal specifications (so called Yellow Paper) should be equivalent. The VM implementation can be found at https://github.com/ethereumproject/go-ethereum/tree/master/vm
 * The VM should be resistant to the following attack scenarios:
   * Transactions/messages whose execution will somehow escape the VM and either reveal or modify memory or hard drive contents of the client's machine
   * Transactions/messages whose execution will cause a system crash
@@ -73,7 +73,7 @@ The following properties are desired:
 
 ### Wire protocol 
 
-The wire protocol is described here: https://github.com/ethereum/wiki/wiki/%C3%90%CE%9EVp2p-Wire-Protocol
+The wire protocol is described here: ./%C3%90%CE%9EVp2p-Wire-Protocol
 
 The wire protocol should be secure against the following issues:
 

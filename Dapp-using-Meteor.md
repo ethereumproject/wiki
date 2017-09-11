@@ -141,7 +141,7 @@ Now rename you `myDapp.css` to `myDapp.less` and add the following line inside:
 @import '{ethereum:dapp-styles}/dapp-styles.less';
 ```
 
-Now you can use all dapp-styles classes and also overwrite all variables of the framework. You can find them [in the repo](https://github.com/ethereum/dapp-styles/blob/master/constants.import.less). Overwrite them by copying them to your `myDapp.less` file and set different values.
+Now you can use all dapp-styles classes and also overwrite all variables of the framework. You can find them [in the repo](https://github.com/ethereumproject/dapp-styles/blob/master/constants.import.less). Overwrite them by copying them to your `myDapp.less` file and set different values.
 
 ## Using ethereum packages
 
@@ -188,7 +188,7 @@ Short:
 - use `myCollection.observe({added: func, changed: func, removed: func})` to communicate to ethereum, keep ethereum logic out of your app as much as possible. This way you just write and read from your reactive collections and the observe functions will handle the rest (e.g. sendTransactions)
 - Filters etc will add logs etc to your collections. So you keep all the callback mess out of your app logic.
 
-For an example see the [Ethereum-Wallet](https://github.com/ethereum/meteor-dapp-wallet).
+For an example see the [Ethereum-Wallet](https://github.com/ethereumproject/meteor-dapp-wallet).
 
 ## Bundle your Ðapp
 

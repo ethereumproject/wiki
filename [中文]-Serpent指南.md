@@ -7,11 +7,11 @@ category:
 
 **更多以太坊信息请访问[EthFans.org](http://ethfans.org)**
 
-有关Serpent 1.0的信息请查阅: https://github.com/ethereum/wiki/wiki/Serpent-1.0-(old)
+有关Serpent 1.0的信息请查阅: ./Serpent-1.0-(old)
 
 Serpent是一种用来编写以太坊合约(Ethereum Contract)的高级编程语言。Serpent翻译成中文意思是"大蛇"，如这个名字所示，这是一种与Python类似的编程语言。Serpent在兼顾底层语言效率与良好编程风格的同时尽可能的追求简洁，还加入了一些针对合约编程的特性。Serpent编译器由C++实现，因此可以被轻松打包进任何客户端，最新版本可以在[Github](http://github.com/ethereum/serpent)上找到。
 
-以下内容需要读者对以太坊的工作原理有一个基本认识，包括区块，交易，合约和消息的概念，以及合约是如何通过读入字节数组和输出字节数组工作的。读者可以通过阅读[以太坊开发指南](https://github.com/ethereum/wiki/wiki/Ethereum-Development-Tutorial)得到这些知识。
+以下内容需要读者对以太坊的工作原理有一个基本认识，包括区块，交易，合约和消息的概念，以及合约是如何通过读入字节数组和输出字节数组工作的。读者可以通过阅读[以太坊开发指南](./Ethereum-Development-Tutorial)得到这些知识。
 
 ### Serpent与Python的区别
 
@@ -99,7 +99,7 @@ Serpent与Python之间的主要区别有:
 
 字母`i`代表整型或者定长字符串（32字节，在Serpern和EVM中与整型等价）参数，字母`s`代表变长字符串参数，而字母`a`代表数组参数。后文会对此做更详细的介绍。
 
-那么如何运行这份合约呢？这时候我们需要使用[pyethereum](https://github.com/ethereum/pyethereum)。先通过pip(环境是python 2.7)安装pyethereum:
+那么如何运行这份合约呢？这时候我们需要使用[pyethereum](https://github.com/ethereumproject/pyethereum)。先通过pip(环境是python 2.7)安装pyethereum:
 
     > sudo pip install pyethereum
 
@@ -388,7 +388,7 @@ def runThis():
 
 点击下面的链接可以看到更多展示macros牛逼用法的例子：
 
-https://github.com/ethereum/serpent/blob/poc7/examples/peano.se
+https://github.com/ethereumproject/serpent/blob/poc7/examples/peano.se
 
 这里要提醒读者注意的是：macros不是函数(functions)。每次调用macro的时候，macro的定义都会被文本复制到调用的地方（宏展开）。因此当macro的定义变得很长时，请考虑定义一个函数替代它。还要注意的是占位符前面的$符号非常重要：如果$a前少了$符号，实际上是在使用名字为a的变量。我们也可以在替换模式(substitution pattern, 指宏的定义体)而不是搜索模式(search pattern，指宏定义的第一行)中使用$占位符，这样在每一次宏展开时会产生一个名字为随机前缀的变量。在替换模式中也可以使用普通变量(变量名前面没有$)，结果就是所有宏展开使用的是同一个变量，而且该变量可能在宏展开之外的地方也会用到。
 
@@ -429,11 +429,11 @@ Serpent中的穷人版类型系统是体现macros威力的绝佳例子，和macr
     c = b * b
     return(unfloat(c))
 
-这段代码的返回值是156,即12.5^2的整数部分。如果只用整型计算，结果将是144。这个技巧可以用来重写[椭圆曲线签名的公钥复原代码](https://github.com/ethereum/serpent/blob/df0aa0e1285d7667d4a0cc81b1e11e0abb31fff3/examples/ecc/jacobian_add.se)，类型系统可以让里面的加法和乘法隐式的做模运算(modulo P)，从而是代码更精巧；我们也可以利用[长整形](https://github.com/ethereum/serpent/blob/poc7/examples/long_integer_macros.se)来处理RSA以及其他基于大数的加密算法中的计算。
+这段代码的返回值是156,即12.5^2的整数部分。如果只用整型计算，结果将是144。这个技巧可以用来重写[椭圆曲线签名的公钥复原代码](https://github.com/ethereumproject/serpent/blob/df0aa0e1285d7667d4a0cc81b1e11e0abb31fff3/examples/ecc/jacobian_add.se)，类型系统可以让里面的加法和乘法隐式的做模运算(modulo P)，从而是代码更精巧；我们也可以利用[长整形](https://github.com/ethereumproject/serpent/blob/poc7/examples/long_integer_macros.se)来处理RSA以及其他基于大数的加密算法中的计算。
 
 ### 其他
 
-更多的Serpent代码示例请参阅：https://github.com/ethereum/serpent/tree/master/examples
+更多的Serpent代码示例请参阅：https://github.com/ethereumproject/serpent/tree/master/examples
 
 pyethereum tester的一些有用技巧：
 

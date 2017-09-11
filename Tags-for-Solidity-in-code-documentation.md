@@ -3,7 +3,7 @@ name: Tags for Solidity in Code Documentation
 category: 
 ---
 
-At the moment pursuant to https://github.com/ethereum/wiki/wiki/Solidity,-Docs-and-ABI
+At the moment pursuant to ./Solidity,-Docs-and-ABI
 the following tags are available to use after /// to provide in-code documentation.
 
 Title

@@ -5,19 +5,19 @@ category:
 
 # Introduction
 
-Dapp を Ethereum 上でうごかすために、`web3` オブジェクトが使えます。これは [web3.js library](https://github.com/ethereum/web3.js)で提供されています。
+Dapp を Ethereum 上でうごかすために、`web3` オブジェクトが使えます。これは [web3.js library](https://github.com/ethereumproject/web3.js)で提供されています。
 この、まるでパーカーのフードのように、 ethereum を包み込んだライブラリのもとでは、
 ローカルのノードと
-[RPC calls](https://github.com/ethereum/wiki/wiki/JSON-RPC)を介して通信できます。
+[RPC calls](./JSON-RPC)を介して通信できます。
 web3.js はすべての ethereum node と通信可能で、そのノードは RPC を発信しています。
 
 `web3` オブジェクトは、 
 `eth` オブジェクトと - `web3.eth` ( Ethereum blockchain との通信に特化したオブジェクト) と 
 `shh` オブジェクト - `web3.shh` ( Whisper 上のやりとりのためのオブジェクト) を保持します。
 時間の経過とともに、web3 プロトコル上の他のオブジェクトも紹介していくつもりです。
-使用例は [こちら](https://github.com/ethereum/web3.js/tree/master/example).
+使用例は [こちら](https://github.com/ethereumproject/web3.js/tree/master/example).
 
-web3.js の洗練された使用例につきましては、[useful Ðapp patterns](https://github.com/ethereum/wiki/wiki/Useful-Ðapp-Patterns)をごらんください。
+web3.js の洗練された使用例につきましては、[useful Ðapp patterns](./Useful-Ðapp-Patterns)をごらんください。
 
 ## Using callbacks
 
@@ -1263,7 +1263,7 @@ Sends a transaction to the network.
   - `value`: `Number|String|BigNumber` - (optional) The value transferred for the transaction in Wei, also the endowment if it's a contract-creation transaction.
   - `gas`: `Number|String|BigNumber` - (optional, default: To-Be-Determined) The amount of gas to use for the transaction (unused gas is refunded).
   - `gasPrice`: `Number|String|BigNumber` - (optional, default: To-Be-Determined) The price of gas for this transaction in wei, defaults to the mean network gas price.
-  - `data`: `String` - (optional) Either a [byte string](https://github.com/ethereum/wiki/wiki/Solidity,-Docs-and-ABI) containing the associated data of the message, or in the case of a contract-creation transaction, the initialisation code.
+  - `data`: `String` - (optional) Either a [byte string](./Solidity,-Docs-and-ABI) containing the associated data of the message, or in the case of a contract-creation transaction, the initialisation code.
   - `nonce`: `Number`  - (optional) Integer of a nonce. This allows to overwrite your own pending transactions that use the same nonce.
 2. `Number|String` - (optional) If you pass this parameter it will not use the default block set with [web3.eth.defaultBlock](#web3ethdefaultblock).
 3. `Function` - (optional) If you pass a callback the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
@@ -1423,7 +1423,7 @@ filter.stopWatching();
     web3.eth.contract(abiArray)
 
 Creates a contract object for a solidity contract, which can be used to initiate contracts on an address.
-You can read more about events [here](https://github.com/ethereum/wiki/wiki/Ethereum-Contract-ABI#example-javascript-usage).
+You can read more about events [here](./Ethereum-Contract-ABI#example-javascript-usage).
 
 ##### Parameters
 
@@ -1772,7 +1772,7 @@ Returns GlobalRegistrar object.
 
 ##### Usage
 
-see [namereg](https://github.com/ethereum/web3.js/blob/master/example/namereg.html) example
+see [namereg](https://github.com/ethereumproject/web3.js/blob/master/example/namereg.html) example
 
 ***
 
@@ -1878,7 +1878,7 @@ console.log(value); // "0x4f554b443"
 
 ### web3.shh
 
-[Whisper  Overview](https://github.com/ethereum/wiki/wiki/Whisper-Overview)
+[Whisper  Overview](./Whisper-Overview)
 
 ##### Example
 

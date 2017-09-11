@@ -491,7 +491,7 @@ contract Derived is Base(0) {
 ```
 
 ## Detect failed CALLs
-[PT](https://github.com/ethereum/cpp-ethereum/pull/1212) If a CALL fails, do not just silently continue. Currently, this issues a STOP but it will throw an exception once we have exceptions.
+[PT](https://github.com/ethereumproject/cpp-ethereum/pull/1212) If a CALL fails, do not just silently continue. Currently, this issues a STOP but it will throw an exception once we have exceptions.
 ```
 contract C {
   function willFail() returns (uint) {

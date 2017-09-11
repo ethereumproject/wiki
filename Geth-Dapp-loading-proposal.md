@@ -7,7 +7,7 @@ To have a simple way to load and start Dapps vinay and I came up with a great id
 
 1. Dapp packages can be downloaded as .zip/.rlp/.dapp
     - they will contain a `dapp.json` with author info and a dapp name and version.
-    - and a `swarm.json`, with all the file paths and hashes, [see here](https://github.com/ethereum/go-ethereum/wiki/URL-Scheme#server-config-examples))
+    - and a `swarm.json`, with all the file paths and hashes, [see here](https://github.com/ethereumproject/go-ethereum/wiki/URL-Scheme#server-config-examples))
 
 2. run `$ geth install mydapp.zip`, which will verify, extract and copy the dapp locally somewhere.  
 **Note** This could also get a name reg domain and looks up the hash an content online, fetches it and installs it.

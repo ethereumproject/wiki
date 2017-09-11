@@ -3,7 +3,7 @@ name: Ethereum Wire Protocol
 category: 
 ---
 
-Peer-to-peer communications between nodes running Ethereum clients run using the underlying [ÐΞVp2p Wire Protocol](https://github.com/ethereum/wiki/wiki/%C3%90%CE%9EVp2p-Wire-Protocol).
+Peer-to-peer communications between nodes running Ethereum clients run using the underlying [ÐΞVp2p Wire Protocol](./%C3%90%CE%9EVp2p-Wire-Protocol).
 
 ### Basic Chain Syncing
 - Two peers connect & say Hello and send their Status message. Status includes the Total Difficulty(TD) & hash of their best block.
@@ -107,10 +107,10 @@ For the Ethereum sub-protocol, upon an active session, a `Status` message must b
 Transactions messages should also be sent periodically as the node has new transactions to disseminate. A node should never send a transaction back to the peer that it can determine already knows of it (either because it was previously sent or because it was informed from this peer originally).
 
 ### Upcoming changes
-- [Light Client Protocol](https://github.com/ethereum/wiki/wiki/Light-client-protocol)
+- [Light Client Protocol](./Light-client-protocol)
 
 ### Changes (PoC-7)
-- [NewBlock Message](https://github.com/ethereum/wiki/wiki/NewBlock-Message)
+- [NewBlock Message](./NewBlock-Message)
 
 ### Changed (PoC-6)
-- [Parallel Block Downloads](https://github.com/ethereum/wiki/wiki/Parallel-Block-Downloads)
+- [Parallel Block Downloads](./Parallel-Block-Downloads)

@@ -52,7 +52,7 @@ Where:
 
 Each transaction and uncle block header is itself provided directly in the form of a list, not in a serialized form. `uncle_list` and `transaction_list` are the lists of the uncle block headers and transactions in the block, respectively. Note that the block number, difficulty and timestamp are integers, and therefore cannot have leading zeroes; `extra_data` and `nonce` can be byte arrays of at most 32 bytes, NOT lists, although this particular check should not be performed for the genesis block where the `extra_data` field will take up many kilobytes.
 
-The `state_root` is the root of a [Patricia Tree](https://github.com/ethereum/wiki/wiki/%5BEnglish%5D-Patricia-Tree) containing (key, value) pairs for all accounts where each address is represented as a 20-byte binary string. At the address of each account, the value stored in the Merkle Patricia tree is a string which is the RLP-serialized form of an object of the form:
+The `state_root` is the root of a [Patricia Tree](./%5BEnglish%5D-Patricia-Tree) containing (key, value) pairs for all accounts where each address is represented as a 20-byte binary string. At the address of each account, the value stored in the Merkle Patricia tree is a string which is the RLP-serialized form of an object of the form:
 
     [ balance, nonce, contract_root ]
 

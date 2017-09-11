@@ -11,7 +11,7 @@ category:
 ##### manual installation 
 
 ```bash
-git clone https://github.com/ethereum/cpp-ethereum
+git clone https://github.com/ethereumproject/cpp-ethereum
 cd cpp-ethereum
 mkdir build
 cd build
@@ -21,7 +21,7 @@ make -j 4
 
 ##### automatic installation 
 
-build instructions are [here](https://github.com/ethereum/cpp-ethereum/wiki/Installing-clients)
+build instructions are [here](https://github.com/ethereumproject/cpp-ethereum/wiki/Installing-clients)
 
 
 #### 2. run eth (headless client)
@@ -57,10 +57,10 @@ where:
 
 #### 4. json-rpc methods, that you might be intrested in:
 
-- [eth_sendTransaction](https://github.com/ethereum/wiki/wiki/JSON-RPC#eth_sendtransaction) - used to send transaction / create contract 
-- [eth_newBlockFilter](https://github.com/ethereum/wiki/wiki/JSON-RPC#eth_newblockfilter) - be notified any time there is new block on the chain
-- [eth_newFilter](https://github.com/ethereum/wiki/wiki/JSON-RPC#eth_newfilter) - create new custom filter and listen to blockchain events matching this filter
-- [eth_compileSolidity](https://github.com/ethereum/wiki/wiki/JSON-RPC#eth_compilesolidity) - used to compile solidity code
+- [eth_sendTransaction](./JSON-RPC#eth_sendtransaction) - used to send transaction / create contract 
+- [eth_newBlockFilter](./JSON-RPC#eth_newblockfilter) - be notified any time there is new block on the chain
+- [eth_newFilter](./JSON-RPC#eth_newfilter) - create new custom filter and listen to blockchain events matching this filter
+- [eth_compileSolidity](./JSON-RPC#eth_compilesolidity) - used to compile solidity code
 
 
 

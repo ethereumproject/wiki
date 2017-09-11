@@ -144,7 +144,7 @@ MPTは[マークルツリー](https://en.wikipedia.org/wiki/Merkle_tree) と [�
 (攻撃者が2^128以上のコンピューターパワーを持たない限り)
 2. 変更すること、追加すること、削除することは対数的な時間の中で可能。
 これによって私達に効率的で更新が簡単な全体の状態を記載した我々のツリー上の"フィンガープリント"の方法を提供してくれる。
-EthererumのMPT(Merkle Patricia Tree)は正式に下記に示されている。 https://github.com/ethereum/wiki/wiki/Patricia-Tree
+EthererumのMPT(Merkle Patricia Tree)は正式に下記に示されている。 ./Patricia-Tree
 
 MPTの上の仕様は下記の決定事項を含む:
 1. **2つのクラスのノードを持つ**、KV(キーバリュー)のノードとそこから派生したノード（更なる詳細についてのMPTの仕様を見て欲しい）KVノードがあることでより効率的になる、何故ならばツリーが特定のエリアにまばらに存在することで、KVのノードがショートカットとしての役割を持つため、64層の深さのツリーを保つ必要が無くなるからだ。
@@ -175,7 +175,7 @@ Ethereumのデフォルトの仕様とよく合っているからだ。
 RLP(Recursive Length Prefix: 再帰的な長さの接頭辞)エンコーディングは、
 Ethereumで使われている主要なシリアライゼーションの形式だ。
 そして、Block,Transaction,アカウントの状態のデータ、そして配線プロトコルのメッセージといっった全ての場所で使われている。
-RLPは正式に下記にて述べられている。https://github.com/ethereum/wiki/wiki/RLP
+RLPは正式に下記にて述べられている。./RLP
 
 RLPは高度に最小主義なシリアライゼーションのフォーマットとして作られた。
 ネストされたバイトアレイを保存する目的のためのみにある。
@@ -321,7 +321,7 @@ Ethereumでは、無駄となったブロックはおじによってのみ含ま
 メインチェーンのマイナーにとって採掘するインセンティブを失わせることに繋がるからだ。
 最後に、多くのネガティブな影響無しに、7段階目迄に制限していることが大半の望ましい影響を及ぼしていることについての計算を示す。
 * 中央集権のリスクを測ったシミュレーターはこちらで利用可能だ。
-https://github.com/ethereum/economic-modeling/blob/master/ghost.py
+https://github.com/ethereumproject/economic-modeling/blob/master/ghost.py
 * 高度なレベルの議論はこちらで行われている。
 https://blog.ethereum.org/2014/07/11/toward-a-12-second-block-time/
 
@@ -375,7 +375,7 @@ The design goals behind the difficulty update rule are:
 もしマイナーが2つの列になったブロックのマイニングを行っているならば、
 マイナーがタイムスタンプの書き換えに対してのみインセンティブを持つようにしようとは全く考えていない。
 もう一つのシミュレーションを伴う強力な定式はこちらにある。
-https://github.com/ethereum/economic-modeling/blob/master/diffadjust/blkdiff.py (シミュレーターはビットコインのマイニングパワーを用いているが、日ごとの平均を全体に対して使っている。1つのポイントでのシミュレーションは95%1日の内にクラッシュする。）
+https://github.com/ethereumproject/economic-modeling/blob/master/diffadjust/blkdiff.py (シミュレーターはビットコインのマイニングパワーを用いているが、日ごとの平均を全体に対して使っている。1つのポイントでのシミュレーションは95%1日の内にクラッシュする。）
 
 ## GasとFee
 

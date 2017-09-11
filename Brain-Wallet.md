@@ -18,7 +18,7 @@ FUNCTION toBrain(STRING seed) RETURNS SECRET
 END FUNCTION
 ```
 
-See [C++ implementation](https://github.com/ethereum/cpp-ethereum/blob/develop/libethcore/KeyManager.cpp#L215-L225) for an example.
+See [C++ implementation](https://github.com/ethereumproject/cpp-ethereum/blob/develop/libethcore/KeyManager.cpp#L215-L225) for an example.
 
 
 ### **Comments (Gustav):**
@@ -34,5 +34,5 @@ I would recommend we configure a KDF that is much harder (even up to 1-2s CPU ti
 This would make our brainwallets much harder to crack, and perhaps even allowing the seed to be shorter, improving usability.
 
 1. https://rya.nc/cracking_cryptocurrency_brainwallets.pdf
-2. https://github.com/ethereum/go-ethereum/blob/master/crypto/crypto_test.go#L65
-3. https://github.com/ethereum/wiki/wiki/Web3-Secret-Storage-Definition
+2. https://github.com/ethereumproject/go-ethereum/blob/master/crypto/crypto_test.go#L65
+3. ./Web3-Secret-Storage-Definition
