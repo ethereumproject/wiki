@@ -4,16 +4,20 @@ category:
 ---
 
 This is a list to explain and demonstrate new Solidity features as soon as they are completed.
-It is used as a kind of changelog and items introduced at some point might be changed at a later point. The official reference is the [Documentation](https://ethereum.github.io/solidity/) which should always reflect the current state of the language.
+It is used as a kind of changelog and items introduced at some point might be changed at a later point. The official reference is the [Documentation](http://solidity.readthedocs.org/) which should always reflect the current state of the language.
+
+This page is **not** the official documentation for Solidity. It contains outdated information on purpose because it reflects the development of the language
+
+**Do not use example code on this page**
 
 ## Special Type Treatment for Integer Literals
 
 [PT](https://www.pivotaltracker.com/story/show/83393282) Expressions only involving integer literals are now essentially treated as "big integers" (i.e. they do not overflow) until they are actually used with a non-literal. The type of the expression is only determined at that point as the smallest integer type that can contain the resulting value. Example:
 
-```
+```js
 contract IntegerLiterals {
   function f() {
-    // The folloing would have caused a type error in earlier versions (cannot add int8 to uint8),
+    // The following would have caused a type error in earlier versions (cannot add int8 to uint8),
     // now the value of x is set to 9 and the type to uint8.
     var x = -1 + 10;
     // It is even possible to use literals that do not fit any of the Solidity types as long as
@@ -27,7 +31,7 @@ contract IntegerLiterals {
 
 [PT](https://www.pivotaltracker.com/story/show/85006746) Contract types are implicitly convertible to `address` and explicitly convertible to and from all integer types. Furthermore, a contract type contains all members of the address type with the semantics applying to the contract's address, unless overwritten by the contract.
 
-```
+```js
 contract Helper {
   function getBalance() returns (uint bal) {
     return this.balance; // balance is "inherited" from the address type
@@ -54,7 +58,7 @@ requires arguments to be padded to multiples of 32 bytes. This is not a language
 
 [PT](https://www.pivotaltracker.com/story/show/84983014) External functions have member functions "gas" and "value" that allow to change the default amount of gas (all) and wei (0) sent to the called contract. "new expressions" also have the value member.
 
-```
+```js
 contract Helper {
   function getBalance() returns (uint bal) { return this.balance; }
 }
@@ -72,7 +76,7 @@ contract Main {
 
 [PT](https://www.pivotaltracker.com/story/show/82574620) `delete` clears all members of a struct.
 
-```
+```js
 contract Contract {
   struct Data {
     uint deadline;
@@ -94,7 +98,7 @@ Note that, unfortunately, this only works directly on structs for now, so I woul
 [PT1](https://www.pivotaltracker.com/story/show/84976094)
 [PT2](https://www.pivotaltracker.com/story/show/86666936) Contracts can inherit from each other.
 
-```
+```js
 contract owned {
     function owned() { owner = msg.sender; }
     address owner;
@@ -146,7 +150,7 @@ contract PriceFeed is owned, mortal, named("GoldFeed") {
 ## Function Modifiers
 
 [PT](https://www.pivotaltracker.com/story/show/85007072) Modifiers can be used to easily change the behaviour of functions, for example to automatically check a condition prior to executing the function. They are inheritable properties of contracts and may be overridden by derived contracts.
-```
+```js
 contract owned {
   function owned() { owner = msg.sender; }
   address owner;
@@ -198,7 +202,7 @@ change by overriding).
 
 [PT](https://www.pivotaltracker.com/story/show/85907772) The explicit conversion between `string` and `hash` types of equal size is now allowed. Example:
 
-```
+```js
 contract Test {
   function convert(hash160 h, string20 s) returns (string20 res_s, hash160 res_h) {
     res_s = string20(h);
@@ -210,7 +214,7 @@ contract Test {
 ## Access to super
 
 [PT](https://www.pivotaltracker.com/story/show/86688340) In the following contract, the function `kill` is overridden by sibling classes. Due to the fact that the sibling classes do not know of each other, they can only call `mortal.kill()` with the effect that one of the overrides is completely bypassed. A reasonable implementation would call the kill functions in all classes in the inheritance hierarchy.
-```
+```js
 contract mortal { function kill() { suicide(msg.sender); } }
 contract named is mortal { function kill() { /*namereg.unregister();*/ mortal.kill(); } }
 contract tokenStorage is mortal { function kill() { /*returnAllTokens();*/ mortal.kill(); } }
@@ -218,7 +222,7 @@ contract MyContract is named, tokenStorage {}
 ```
 
 The `super` keyword solves this. Its type is the type of the current contract if it were empty, i.e. it contains all members of the current class' bases. Access to a member of super invokes the usual virtual member lookup, but it ends just above the current class. Using this keyword, the following works as expected:
-```
+```js
 contract mortal { function kill() { suicide(msg.sender); } }
 contract named is mortal { function kill() { /*namereg.unregister();*/ super.kill(); } }
 contract tokenStorage is mortal { function kill() { /*returnAllTokens();*/ super.kill(); } }
@@ -227,7 +231,7 @@ contract MyContract is named, tokenStorage {}
 ## State Variable Accessors
 [PT](https://www.pivotaltracker.com/story/show/86308642) Public state variables now have accessors created for them. Basically any `public` state variable can be accessed by calling a function with the same name as the variable.
 
-```
+```js
 contract test {
     function test() {
         data = 42;
@@ -238,7 +242,7 @@ contract test {
 
 For example in the above contract if you tried to call test's `data()` method then you would obtain the result 42.
 
-```
+```js
 contract test {
     function test() {
         data = 42;
@@ -256,7 +260,7 @@ the arguments to be stored in the transaction's log. Up to three parameters can 
 attribute `indexed` which will cause the respective arguments to be treated as log topics instead
 of data. The hash of the signature of the event is always one of the topics. All non-indexed
 arguments will be stored in the data part of the log. Example:
-```
+```js
 contract ClientReceipt {
   event Deposit(address indexed _from, hash indexed _id, uint _value);
   function deposit(hash _id) {
@@ -274,7 +278,7 @@ signature.
 function. This function cannot have arguments and is executed on a call to the contract if
 none of the other functions matches the given function identifier (or if no data was supplied at all).
 
-```
+```js
 contract Test {
   function() { x = 1; }
   uint x;
@@ -291,13 +295,13 @@ contract Caller {
 ## Events in Exported Interfaces
 
 [PT](https://www.pivotaltracker.com/story/show/87036508) Events are exported to the JSON and Solidity interfaces generated by the compiler. The contract
-```
+```js
 contract c {
     event ev(uint indexed a);
 }
 ```
 generates the JSON interface
-```
+```js
 [
    {
       "inputs" : [
@@ -324,7 +328,7 @@ and the Solidity interface
 
 [PT](https://www.pivotaltracker.com/story/show/86635568) Functions and storage variables can be specified as being `public`, `protected` or `private`, where the default for functions is `public` `protected` for storage variables. Public functions are part of the external interface and can be called externally, while for storage variables, an automatic accessor function is generated. Non-public functions are only visible inside a contract and its derived contracts (there is no distinction between `protected` and `private` for now).
 
-```
+```js
 contract c {
   function f(uint a) private returns (uint b) { return a + 1; }
   uint public data;
@@ -334,7 +338,7 @@ External functions can call `c.data()` to retrieve the value of `data` in storag
 
 ## Numeric Literals with Ether Subdenominations
 [PT](https://www.pivotaltracker.com/story/show/84986568) Numeric literals can also be followed by the common ether subdenominations and the value of the assigned to variable will be multiplied by the proper amount.
-```
+```js
 contract c {
   function c()
   {
@@ -352,13 +356,13 @@ contract c {
 
 ## SHA3 with arbitrary arguments
 [PT](https://www.pivotaltracker.com/story/show/86896766). `sha3()` can now take an arbitrary number and type of arguments.
-```
+```js
 contract c {
   function c()
   {
       val2 = 123;
       val1 = sha3("foo"); // sha3(0x666f6f)
-      val3 = sha3(val2, "bar", 1031); //sha3(0x7b626172407)
+      val3 = sha3(val2, "bar", 1031); //sha3(0x7b6261720407)
   }
   uint256 val1;
   uint16 val2;
@@ -368,7 +372,7 @@ contract c {
 
 ## Optional Parameter Names
 [PT](https://www.pivotaltracker.com/story/show/85594334). The names for function parameters and return parameters are now optional.
-```
+```js
 contract test {
   function func(uint k, uint) returns(uint){
     return k;
@@ -377,14 +381,16 @@ contract test {
 ```
 
 ## Generic call Method
+**DO NOT USE THIS WHEN CALLING UNTRUSTED CODE:** it's dangerous like Javascript's eval().
 [PT](https://www.pivotaltracker.com/story/show/86084248) Address types (and contracts by inheritance) have a method `call` that can receive an arbitrary number of arguments of arbitrary types (which can be serialized in memory) and will invoke a message call on that address while the arguments are ABI-serialized. If the first type has a memory-length of exactly four bytes, it is not padded to 32 bytes, so it is possible to specify a function signature.
-```
+```js
 contract test {
   function f(address addr, uint a) {
-    addr.call(string4(string32(sha3("fun(uint256)"))), a);
+    addr.call(bytes4(sha3("func(uint256)")), a); // ideally, func is code you wrote, otherwise you could be executing code of an attacker
   }
 }
 ```
+**DO NOT USE THIS WHEN CALLING UNTRUSTED CODE**
 
 ## Byte arrays
 [PT](https://www.pivotaltracker.com/story/show/87037182) Basic support for variable-length byte arrays. This includes
@@ -398,7 +404,7 @@ What is not possible yet:
  - local variables of `bytes` type
  - index or slice access
 
-```
+```js
 contract c {
   bytes data;
   function() { data = msg.data; }
@@ -411,9 +417,11 @@ contract c {
 ## Enums
 [PT](https://www.pivotaltracker.com/story/show/86670106) Solidity now supports enums. Enums are explicitly convertible to all integer types but implicit conversion is not allowed.
 
-```
+```js
 contract test {
-	enum ActionChoices { GoLeft, GoRight, GoStraight, SitStill };
+	enum ActionChoices { GoLeft, GoRight, GoStraight, SitStill }
+	ActionChoices choices;
+
 	function test()
 	{
 	    choices = ActionChoices.GoStraight;
@@ -422,15 +430,14 @@ contract test {
 	{
 	    d = uint256(choices);
 	}
-	ActionChoices choices;
-	}
+}
 ```
 
 ## Visibility Specifiers
 
 [PT](https://www.pivotaltracker.com/story/show/86487946) The visibility of a function can be specified by giving at most one of the specifiers `external`, `public`, `inheritable` or `private`, where `public` is the default. "External" functions can only be called via message-calls, i.e. from other contracts or from the same contract using `this.function()` (note that this also prevents calls to overwritten functions in base classes). Furthermore, parameters of "external" functions are immutable. "Public" functions can be called from other contracts and from the same contract using stack-based calls. "Inheritable" and "private" functions can only be called via stack-based calls, while "inheritable" functions are only visible in the contract itself and its derived contracts and "private" functions are not even visible in derived contracts.
 
-```
+```js
 contract Base {
   function exte() external { }
   function publ() public /* can be omitted */ { }
@@ -453,7 +460,7 @@ contract Derived is Base {
 
 ## Import Statement
 [PT](https://www.pivotaltracker.com/story/show/87165660) We can now import other contracts and/or standard library contracts using the `import` keyword.
-```
+```js
 import "mortal";
 
 contract Test is mortal {
@@ -465,7 +472,7 @@ contract Test is mortal {
 
 ## Inline members initialization
 [PT](https://www.pivotaltracker.com/story/show/84982976) Inline members can be initialized at declaration time.
-```
+```js
 contract test {
   function test(){
     m_b = 6;
@@ -477,7 +484,7 @@ contract test {
 
 ## The arguments of the constructor of base contract
 [PT](https://www.pivotaltracker.com/story/show/88454388) It is possible to pass arguments to the base contracts constructor. The arguments for the base constructor in the header will be optional later.
-```
+```js
 contract Base {
 	function Base(uint i)
 	{
@@ -505,7 +512,7 @@ contract C {
 ## Basic features for arrays
 [PT](https://www.pivotaltracker.com/story/show/84119688) Byte arrays and generic arrays of fixed and dynamic size are supported in calldata and storage with the following features: Index access, copying (from calldata to storage, inside storage, both including implicit type conversion), enlarging and shrinking and deleting. Not supported are memory-based arrays (i.e. usage in non-external functions or local variables), array accessors and features like slicing.
 Access to an array beyond its length will cause the execution to STOP (exceptions are planned for the future).
-```
+```js
 contract ArrayExample {
   uint[7][] data;
   bytes byteData;
@@ -528,7 +535,7 @@ contract ArrayExample {
 
 ## Now Variable
 [PT](https://www.pivotaltracker.com/story/show/89728640) The global scope contains an immutable variable called `now` which is an alias to `block.timestamp`, i.e. it contains the timestamp of the current block.
-```
+```js
 contract TimedContract {
   uint timeout = now + 4 weeks;
 }
@@ -548,7 +555,7 @@ contract TimedContract {
 [Link to PT] (https://www.pivotaltracker.com/story/show/86896308)
 New magic type `msg.sig` that will provide the hash of the current function signature as `bytes4` type.
 
-```
+```js
 contract test {
 	function foo(uint256 a) returns (bytes4 value) {
 		return msg.sig;
@@ -562,7 +569,7 @@ Calling that function will return `2FBEBD38` which is the hash of the signature 
 [PT](https://www.pivotaltracker.com/story/show/86670364)
 Added `constant` specifier for uint, mapping and bytesXX types. Variables declared with `constant` specifier should be initialized at declaration time and can not be changed later. For now local variables can not be constant. Constant variables are not stored in Storage.
 
-```
+```js
 contract Foo {
 	function getX() returns (uint r) { return x; }
 	uint constant x = 56;
@@ -573,7 +580,7 @@ contract Foo {
 [PT](https://www.pivotaltracker.com/story/show/89518344)
 Added `anonymous` specifier for Event. For the event declared as anonymous the hash of the signature of the event will not be added as a first topic. The format is
 
-```
+```js
 event <name>([index list]) anonymous;
 ```
 Anonymous property is also visible for ABI document.
@@ -589,7 +596,7 @@ Items in storage are packed tighly as far as possible according to the following
  - Structs and array data always start a new slot and occupy whole slots (but items inside a struct or array are packed tightly according to these rules).
 
 Examples:
-```
+```js
 contract C {
   uint248 x; // 31 bytes: slot 0, offset 0
   uint16 y; // 2 bytes: slot 1, offset 0 (does not fit in slot 0)
@@ -611,7 +618,7 @@ contract C {
 [PT](https://www.pivotaltracker.com/story/show/89148380)
 The optimizer splits code into blocks (at all operations that have non-local side effects like JUMP, CALL, CREATE and for also all instructions that access or modify memory or storage), analyses these blocks by creating an expression graph and establishes equivalences in a bottom-up way, simplifying expressions that e.g. involve constants. In the following code-generation phase, it re-creates the set of instructions that transform a given initial stack configuration into a given target stack configuration utilizing the simplest representatives of these equivalence classes.
 In conjunction with the already present jump-optimization, the two code snippets given below should be compiled into the same sequence of instructions:
-```
+```js
 contract test {
   function f(uint x, uint y) returns (uint z) {
     var c = x + 3;
@@ -620,7 +627,7 @@ contract test {
   }
 }
 ```
-```
+```js
 contract test {
   function f(uint x, uint y) returns (uint z) {
     return 10;
@@ -632,7 +639,7 @@ contract test {
 
 [PT](https://www.pivotaltracker.com/story/show/90785926)
 This adds support for memory and storage operations to the common subexpression eliminator. This makes it possible to e.g. stretch the equality inference engine across SSTORE, MSTORE and even SHA3 computations (which go via memory). Without optimizer (because of packed storage), there are 4 SLOAD, 3 SSTORE and 4 SHA3 operations. The optimizer reduces those to a single SLOAD, SHA3 and SSTORE each.
-```
+```js
 contract test {
   struct s { uint8 a; uint8 b; uint8 c; }
   mapping(uint => s) data;
@@ -647,7 +654,7 @@ contract test {
 [PT](https://www.pivotaltracker.com/story/show/88772706)
 All functions with visibility more than internal should have external types (ABI types) otherwise raise an error.
 For Contract type external type is address type.
-```
+```js
 contract Foo {}
 contract Test {
     function func() {
@@ -663,7 +670,7 @@ the ABI interface for Poo is Poo(address) when the Solidity interface is still P
 ## Accessor for Arrays
 [PT](https://www.pivotaltracker.com/story/show/88500646)
 For Arrays the accessor is generated which accepts the index as parameter and returns an array element
-```
+```js
 contract test {
     uint[3] public data;
     function test() {
@@ -678,7 +685,7 @@ In the above contract if you tried to call the data(1) method of the test you wo
 ## Overloading Functions
 [PT](https://www.pivotaltracker.com/story/show/85511572) Contracts can have multiple functions of the same name as long as the parameters differ in number or type. If such an overloaded function is referenced, it has to be called immediately to resolve the ambiguity using the types of the arguments. It is an error if not exactly one of the possible functions can be called with the given arguments.
 
-```
+```js
 contract Base {
   function f(uint a) {}
 }
@@ -703,7 +710,7 @@ Overloaded functions are also present in the external interface. It is an error 
 
 These optimizations might sound not very powerful, but together with "Common Subexpression Elimination" (which is does much more than its name might suggest), the following contract is optimized to store `8` in the mapping and return the value without any jump.
 
-```
+```js
 contract c {
   function () returns (uint) { return g(8); }
   function g(uint pos) internal returns (uint) { setData(pos, 8); return getData(pos); }
@@ -717,7 +724,7 @@ contract c {
 
 [PT](https://www.pivotaltracker.com/story/show/88344782) Contracts can be marked as "not fully implemented" by containing at least one abstract function. A function is abstract if it does not have a body defined.
 
-```
+```js
 contract base { function foo(); }
 contract derived is base { function foo() {} }
 ```
@@ -728,7 +735,7 @@ For example in the above, foo is an abstract function and as such the base contr
 
 [PT](https://www.pivotaltracker.com/story/show/94682212) The address type receives a method `callcode` which is similar to `call`, but uses `CALLCODE` instead of `CALL` when the function is invoked. This means that the code at the given address will be executed in the context of the current contract. Example:
 
-```
+```js
 contract Code {
   uint m_data;
   function (uint v) { m_data = v; }
@@ -819,7 +826,7 @@ Memory-stored objects as local variables are correctly zero-initialised: Members
 
 [PT](https://www.pivotaltracker.com/n/projects/1189488/stories/92691082)
 Positive integer literals are now convertible to signed if in value range.
-```
+```js
 int8 x = 2;
 ```
 
@@ -927,7 +934,7 @@ All options except `--libraries` are ignored (including `-o`).
 [PT](https://www.pivotaltracker.com/story/show/96275370)
 
 throw is a statement that triggers a solidity exception and thus can be used to revert changes made during the transaction. It does not take any parameters and jumps to the error tag.
-```
+```js
 contract Sharer {
     function sendHalf(address addr) returns (uint balance) {
         if (!addr.send(msg.value/2))
@@ -954,7 +961,7 @@ Example: "abcdef" is stored as `0x61626364656600000...000d` while `"abcabcabc...
 
 Example:
 
-```
+```js
 /// @dev Models a modifiable and iterable set of uint values.
 library IntegerSet
 {
@@ -1043,7 +1050,7 @@ contract User
 [PT](https://www.pivotaltracker.com/story/show/99085194) Inline tuples can be created and assigned to newly declared local variables or already existing lvalues. This makes it possible to access multiple return values from functions.
 
 ``` function f() returns (uint, uint, uint) { return (1,2,3); }```
-```
+```js
 var (a,b,c) = f();
 var (,x,) = f();
 var (,y) = f();
@@ -1056,7 +1063,7 @@ For newly constructed tuples, elements may not be left out, except for one speci
 
 Assigning to pre-existing lvalues is similar to declaring multiple variables and also allows wildcards:
 
-```
+```js
 contract c {
   string s;
   struct Data {uint a; uint b;}
@@ -1069,10 +1076,10 @@ contract c {
 
 ## `.push()` for Dynamic Storage Arrays
 
-Dynamically-sized storage arrays have a member function `push`, such that
+[PT](https://www.pivotaltracker.com/story/show/105439966) Dynamically-sized storage arrays have a member function `push`, such that
 `var l = arr.push(el);` is equivalent to `arr[arr.length++] = el; var l = arr.length;`.
 
-```
+```js
 contract c {
   struct Account { address owner; uint balance; }
   Account[] accounts;
@@ -1080,5 +1087,114 @@ contract c {
     accounts.push(Account(_owner, _balance));
   }
 }
-
 ```
+
+## Allocation of Dynamic Memory Arrays
+
+[PT](https://www.pivotaltracker.com/story/show/101688050) Dynamic memory arrays can be allocated in the following way:
+
+```js
+contract c {
+  function f() {
+    uint[] memory x = new uint[](100);
+    uint[][] memory twoDim = new uint[][](20);
+    for (uint i = 0; i < twoDim.length; i++)
+      twoDim[i] = new uint[](30);
+  }
+}
+```
+
+This is a **breaking change** because of the way NewExpressions are parsed: Expressions of the form
+`new ContractName.value(10)()` have to be changed to `(new ContractName).value(10)()`.
+
+## Support for addmod and mulmod
+
+[PT](https://www.pivotaltracker.com/story/show/108433524) Modular arithmetics outside of the 256 bit field is provided by the `addmod` and `mulmod` functions. `addmod(x, y, z)` computes `(x+y) % z`, only that it uses unbounded integers for the computations. Similarly, `mulmod(x, y, z)` computes `(x*y) % z`.
+
+## Attaching Library Functions to Types
+
+[PT](https://www.pivotaltracker.com/story/show/101773928) At the contract level, statements of the form `using Lib for Type;` are possible, where `Lib` has to be the name of a library and `Type` can either be the name of a type or `*`. The effect is that all functions in `Lib` are attached to variables of type `Type` (or just all, if `Y` is `*`) as member functions and expressions of the form `x.function(a, b)` are essentially equivalent to `Lib.function(x, a, b)`.
+
+```js
+library Lib {
+  function sum(uint[] storage self) returns (uint s) {
+    for (uint i = 0; i < self.length; i++)
+      s += self[i];
+  }
+}
+contract C {
+  using Lib for uint[];
+  uint[] data;
+  function f() {
+    data.push(data.sum());
+  }
+}
+```
+
+## More Flexible Import
+
+[PT](https://www.pivotaltracker.com/story/show/102848776) The import statement will behave as a subset of the [ES6 import](http://exploringjs.com/es6/ch_modules.html). The `export` keyword is not available, all symbols will be exported and there is no "default export". The import statement behaves as follows:
+
+`import "filename";`: will import all symbols from `"filename"` (and symbols imported there) into the current global scope (different than in ES6 but backwards-compatible for Solidity).
+
+`import * as symbolName from "filename";` creates a new global symbol `symbolName` whose members are all symbols from `"filename"`.
+
+`import {symbol1 as alias, symbol2} from "filename";` creates new global symbols `alias` and `symbol2` which reference `symbol1` and `symbal2` from `"filename"`, respectively.
+
+Another syntax that is not part of ES6, but probably convenient:
+
+`import "filename" as symbolName;` is equivalent to `import * as symbolName from "filename";`.
+
+### Path Resolution
+
+In the above, `filename` is always treated as a path to a file with `/` as directory separator, `.` as the current directory and `..` as the parent directory. Path names that do not start with `./` or `../` are treated as absolute paths and the compiler has to be instructed how to resolve the first element of that path. Using `.` or `..` is only valid at the beginning of the path. This hierarchy does not need to strictly map onto the filesystem, it can also map to resources discovered via e.g. ipfs, http or git.
+
+When the compiler is invoked, it is not only possible to specify how to discover the first element of a path, but it is possible to specify path prefix remappings so that e.g. `github.com/ethereum/dapp-bin/library` is remapped to `/usr/local/dapp-bin/library` and the compiler will read the files from there. If remapping keys are prefixes of each other, the longest is tried first. This allows for a "fallback-remapping" with e.g. "" maps to "/usr/local/include/solidity".
+
+### Changes to solc Interface
+
+For solc, these remappings are provided as `key=value` arguments, where the `=value` part is optional (and defaults to `key` in that case). All remapping values that are regular files are compiled (including their dependencies). This mechanism is completely backwards-compatible (as long as no filename contains a `=`) and thus not a breaking change. solc will only read files in directory(ies) where input files reside or in remapping targets.
+
+## Index access for fixed bytes type
+
+[PT](https://www.pivotaltracker.com/story/show/108246592) Single bytes of expressions of type `bytes8`, ..., `bytes32` are accessible using `[i]`. Example:
+
+```js
+contract C {
+  function f(bytes32 a, uint i) returns (byte) { return a[i]; }
+}
+```
+
+Write access is not supported, as it is actually quite difficult and blurs the distinction between value and reference types.
+
+## Inline Assembly
+
+[PT](https://www.pivotaltracker.com/story/show/103578058) Allow the use of EVM opcodes (and more) at any point where statements are allowed in Solidity. Full documentation with examples can be found in the official documentation. Small example:
+
+```js
+contract C {
+    function fib() {
+	assembly {
+		let n := calldataload(4)
+		let a := 1
+		let b := a
+	loop:
+		jumpi(loopend, eq(n, 0))
+		a add swap1
+		n := sub(n, 1)
+		jump(loop)
+	loopend:
+		mstore(0, a)
+		return(0, 0x20)
+	}
+    }
+}
+```
+
+## Calling Internal Functions of Libraries
+
+Internal functions of libraries can now be called in the same way as internal functions of
+base classes can be called. This has the effect that the code of the library function
+is pulled into the assembly / binary of the caller, i.e. it does not generate an actual EVM call.
+
+Examples and more detailed documentation can be found in the [documentation](http://solidity.readthedocs.io/en/latest/contracts.html#libraries).

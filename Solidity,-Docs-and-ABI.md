@@ -5,7 +5,7 @@ category:
 
 *NOTE: This is intended largely as a vague overview and a historical reference. For specific details and the latest specification, see [Ethereum Contract ABI](./Ethereum-Contract-ABI), [Ethereum Natural Specification Format](./Ethereum-Natural-Specification-Format) and [Solidity Tutorial](./Solidity-Tutorial).*
 
-An ABI is intended to serve as the de facto method for encoding & decoding data into & out of transactions.
+An Application Binary Interface (ABI) is intended to serve as the de facto method for encoding & decoding data into & out of transactions.
 
 For this ABI, contracts are treated as objects. They export a particular interface, not dissimilar from that of an OO language, for example for a contract `Foo`:
 

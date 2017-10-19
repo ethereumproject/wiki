@@ -5,7 +5,7 @@ category:
 
 # This page is not actively maintained.
 
-The current Solidity documentation can be found at http://ethereum.github.io/solidity/
+The current Solidity documentation can be found at http://solidity.readthedocs.io/en/latest/
 
 # Foreword
 
@@ -79,7 +79,7 @@ In addition to these, there is the intrinsic `address` type used for identifying
 - `address`: account identifier, 160-bits.
 - `bool`: two-state value.
 
-Most of the time, we'll tend to use `uint` und `bytes32`; the former if we intend to do arithmetic, the latter when we need to identify or refer to pieces of data, events, &c.
+Most of the time, we'll tend to use `uint` and `bytes32`; the former if we intend to do arithmetic, the latter when we need to identify or refer to pieces of data, events, &c.
 
 So to declare a variable it is very similar to the C-like languages: we simply place the type, followed by the variable name and finish the expression with a `;`. For example to declare a uint named `x` we would write:
 
@@ -130,7 +130,10 @@ address a = 0x0123456789abcdef0123;
 
 # Byte Strings
 
-Byte string literals are formed by a sequence of arbitrary characters contained between quote characters (`"`). They are generally interpreted as zero-terminated ASCII encoded text, similar to C. The terminating zero need not be supplied. An examples would be: `"Hello, World!"`.
+Byte string literals are formed by a sequence of arbitrary characters contained between quote characters (`"`). They are generally interpreted as zero-terminated ASCII encoded text, similar to C. The terminating zero need not be supplied. An example would be:
+
+`var s = "Hello, World!";`
+
 
 # Reals
 

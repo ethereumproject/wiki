@@ -110,7 +110,7 @@ contract Config {
 }
 ```
 
-#### configUser
+#### named
 ```
 import "Config";
 import "NameReg";

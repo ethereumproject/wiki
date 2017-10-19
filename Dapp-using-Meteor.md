@@ -27,11 +27,11 @@ True, Meteor is a full stack framework and its main improvement is realtime web 
 2. You get a development environment, which has live reload, CSS injection and support for many pre-compilers (LESS, Coffeescript, etc) out of the box
 3. You can get all frontend code as single `index.html` with one `js` and `css` file plus your assets, using [meteor-build-client](https://github.com/frozeman/meteor-build-client). You can then host it everywhere or simple run the `index.html` itself or distribute it later on *swarm*.
 4. It embraces full reactivity, which make building consistent interface much easier (similar to angualr.js `$scope` or binding)
-5. It has a great model called Minimongo, which gives you a mongoDB like interface for a reactive in-memory database, which can also be [auto-persistet to localstorage](https://atmospherejs.com/frozeman/persistent-minimongo) or [indexedDB](https://atmospherejs.com/frozeman/persistent-minimongo2)
+5. It has a great model called Minimongo, which gives you a mongoDB like interface for a reactive in-memory database, which can also be [auto-persisted to localstorage](https://atmospherejs.com/frozeman/persistent-minimongo) or [indexedDB](https://atmospherejs.com/frozeman/persistent-minimongo2)
 
-### Do i need to host my Ðapp on a server?
+### Do I need to host my Ðapp on a server?
 
-No, using [meteor-build-client](https://github.com/frozeman/meteor-build-client) you can get all the static assets of you Ðapp to run without any server, though if you use a router like [iron-](https://atmospherejs.com/iron/router) or [flow-router](https://atmospherejs.com/meteorhacks/flow-router), you need to use hash (`index.html#!/mypath`) routes instead of clean HTML5 pushstate routes.
+No, using [meteor-build-client](https://github.com/frozeman/meteor-build-client) you can get all the static assets of your Ðapp to run without a server, though if you use a router like [iron-](https://atmospherejs.com/iron/router) or [flow-router](https://atmospherejs.com/meteorhacks/flow-router), you need to use hash (`index.html#!/mypath`) routes instead of clean HTML5 pushstate routes.
 
 ***
 
@@ -69,13 +69,13 @@ I recommend also to add the following packages:
 
 ### A short excursion into Meteors folder structure
 
-Meteor doesn't force you to have a specifc folder structure, though some folders have specifc meaning and will be treated differently when bundling/running your application.
+Meteor doesn't force you to have a specific folder structure, though some folders have specific meaning and will be treated differently when bundling/running your application.
 
 Folders with specific treatment
-- `client` - files in a folder called `client` will only be loaded by the client part of your app and as we are building a Ðapp, thats where most of our files go.
-- `lib` - files in folders called `lib` will load before other files in the same folder. This is an ideal place your init files, libraries, or ethereum specifc files.
+- `client` - files in a folder called `client` will only be loaded by the client part of your app and as we are building a Ðapp, that's where most of our files go.
+- `lib` - files in folders called `lib` will load before other files in the same folder. This is an ideal place your init files, libraries, or ethereum specific files.
 - `public` - a folder called `public` contains assets meteor will make available on the root of your webserver (or later bundled Ðapp)
-- There are a few more specifc folders like `server`, `tests`, `packages`, etc. If you want to get to know them take a look at the [Meteor docs](http://docs.meteor.com/#/full/structuringyourapp)
+- There are a few more specific folders like `server`, `tests`, `packages`, etc. If you want to get to know them take a look at the [Meteor docs](http://docs.meteor.com/#/full/structuringyourapp)
 
 So to build a Ðapp we ideally create the following folder structure in our `myDapp` folder:
 
@@ -89,7 +89,7 @@ So to build a Ðapp we ideally create the following folder structure in our `myD
    - public
 ```
 
-**Note** The community provides also Meteor Ðapp Boilerplates like this on from Nick Dodson: https://github.com/SilentCicero/meteor-dapp-boilerplate
+**Note** The community provides also Meteor Ðapp Boilerplates like this one from Nick Dodson: https://github.com/SilentCicero/meteor-dapp-boilerplate
 
 ### Connect your Ðapp
 To connect our dapp we need to start `geth` with the right CORS headers in another terminal:
@@ -101,9 +101,8 @@ $ geth --rpc --rpccorsdomain "http://localhost:3000"
 We also need to set the provider. Ideally we create a file in our lib folder called `init.js` and add the following line:
 
 ```js
-// set providor
-if(!web3.currentProvider) // make sure we don't overwrite a provider set by Mist later on
-    web3.setProvider(new web3.providers.HttpProvider("http://localhost:8545"));
+if(typeof web3 === 'undefined')
+    web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
 ```
 
 ### Run your Ðapp
@@ -145,9 +144,9 @@ Now you can use all dapp-styles classes and also overwrite all variables of the 
 
 ## Using ethereum packages
 
-To make your live as a Ðapp developer easier we provide some packages that help you build Ðapps faster.
+To make your life as a Ðapp developer easier we provide some packages that help you build Ðapps faster.
 
-If you add the recommended packages above you should have the [ethereum:tools](https://atmospherejs.com/ethereum/tools), [accounts](https://atmospherejs.com/ethereum/accounts) and [ethereum:blocks](https://atmospherejs.com/ethereum/blocks) packages available.
+If you add the recommended packages above you should have the [ethereum:tools](https://atmospherejs.com/ethereum/tools), [ethereum:accounts](https://atmospherejs.com/ethereum/accounts) and [ethereum:blocks](https://atmospherejs.com/ethereum/blocks) packages available.
 
 These 3 packages give you the `EthTools`, `EthAccounts` and `Ethblocks` objects, which give you formatter functions,  a collection with the accounts from `web3.eth.accounts` (with auto updated balance) and a collection of the last 50 blocks.
 
@@ -204,6 +203,6 @@ This will put your Ðapps static files into the build folder, above your `myDapp
 
 The last option `--path` will make the linking of all files relative, allowing you to start the app by simply clicking the `build/index.html`.
 
-Be aware that when running your app on the `file://` protocol, you won't be able to use client side routing, due to web security. Later in mist you will be able to use client side routing, as dapps are severed over the `eth://` protocol.
+Be aware that when running your app on the `file://` protocol, you won't be able to use client side routing, due to web security. Later in mist you will be able to use client side routing, as dapps are served over the `eth://` protocol.
 
 In the future you will be able to simply upload your Ðapp on swarm.

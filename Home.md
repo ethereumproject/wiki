@@ -13,9 +13,9 @@ Ethereum Classic's core development team is __ETCDEV__, working alongside an imm
 
 :books: This is a _wiki_: Users signed in with GitHub can edit and add pages using the [browser](https://help.github.com/articles/editing-wiki-pages-via-the-online-interface) or [locally](https://help.github.com/articles/adding-and-editing-wiki-pages-locally).
 
-## Status 
+## Status
 
-### Frontier
+### Homestead
 
 Version 1.0 of Ethereum aka Frontier was released on July 30th 2015! Development continues towards the versions named Homestead, Metropolis and Serenity (v1.1). Frontier is aimed at exchangers and [miners](./Mining). Homestead is aiming for [Ðapps developers](./Ethereum-Development-Tutorial), while Metropolis is aiming for end users with the release of the Mist browser. Serenity is meant to move from consensus through [Proof-of-Work](./Ethash) to [Proof-of-Stake](https://blog.ethereum.org/2015/08/01/introducing-casper-friendly-ghost/).
 

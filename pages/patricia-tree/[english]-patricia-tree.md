@@ -11,7 +11,7 @@ Merkle Patricia trees provide a cryptographically authenticated data structure t
 
 In a basic radix tree, every node looks as follows:
 
-    [ value, i0, i1 ... in]
+    [i0, i1 ... in, value]
 
 Where i0 ... in represent the symbols of the alphabet (often binary or hex). value is the terminal value at the node, and the values in the i0 ... in slots are either NULL or pointers to (in our case, hashes of) other nodes. This forms a basic (key, value) store; for example, if you are interested in the value that is currently mapped to dog in the tree, you would first convert dog into the alphabet (giving 646f67 if we're using hex), and then descend down the tree following that path until at the end of the path you read the value. That is, you would first look up the root hash in a key/value store to get the root node, then look up node 6 of the root node to get the node one level down, then look up node 4 of that, then look up node 6 of that, and so on, until, once you followed the path root -> 6 -> 4 -> 6 -> f -> 6 -> 7, you look up the value of the node that you have and return the result.
 
@@ -21,7 +21,7 @@ The update and delete operations for radix trees are simple, and can be defined 
         if key == '':
             curnode = db.get(node) if node else [ NULL ] * 17
             newnode = curnode.copy()
-            newnode['value'] = value
+            newnode[-1] = value
         else:
             curnode = db.get(node) if node else [ NULL ] * 17
             newnode = curnode.copy()
@@ -38,7 +38,7 @@ The update and delete operations for radix trees are simple, and can be defined 
             newnode = curnode.copy()
             newindex = delete(curnode[key[0]],key[1:])
             newnode[key[0]] = newindex
-            if len(filter(x -&gt; x is not NULL, newnode)) == 0:
+            if len(filter(x -> x is not NULL, newnode)) == 0:
                 return NULL
             else:
                 db.put(hash(newnode),newnode)
@@ -50,12 +50,12 @@ However, radix trees have one major limitation: their inefficiency. If you want 
 
 ### Specification: Compact encoding of hex sequence with optional terminator
 
-The traditional compact way of encoding a hex string is to convert it into binary - that is, a string like 0f1248 would become three bytes \[15, 18, 72\] (or in string representation \x0f\x18H). However, this approach has one slight problem: what if the length of the hex string is odd? In that case, there is no way to distinguish between, say, 0f1248 and f1248. Additionally, our application in the Merkle Patricia tree requires the additional feature that a hex string can also have a special &quot;terminator symbol&quot; at the end (denoted by the 'T'). A terminator symbol can occur only once, and only at the end. An alternative way of thinking about this to not think of there being a terminator symbol, but instead treat bit specifying the existence of the terminator symbol as a bit specifying that the given node encodes a final node, where the value is an actual value, rather than the hash of yet another node.
+The traditional compact way of encoding a hex string is to convert it into decimal - that is, a string like 0f1248 would become three bytes \[15, 18, 72\] (or in string representation \x0f\x18H). However, this approach has one slight problem: what if the length of the hex string is odd? In that case, there is no way to know how to group the hex string into character pairs for decimal conversion. Additionally, our application in the Merkle Patricia tree requires the additional feature that a hex string can also have a special &quot;terminator symbol&quot; at the end (denoted by the 'T'). A terminator symbol can occur only once, and only at the end. An alternative way of thinking about this to not think of there being a terminator symbol, but instead treat bit specifying the existence of the terminator symbol as a bit specifying that the given node encodes a final node, where the value is an actual value, rather than the hash of yet another node.
 
-To solve both of these issues, we force the first nibble of the final bytestream to encode two flags, specifying oddness of length (ignoring the 'T' symbol) and terminator status; these are placed, respectively, into the two lowest significant bits of the first nibble. In the case of an even-length hex string, we must introduce a second nibble (of value zero) to ensure the hex-string is even in length and thus is representable by a whole number of bytes. Thus we construct the following encoding:
+To solve both of these issues, we force the first nibble of the final bytestream to encode two flags, specifying terminator status and oddness of length (ignoring the 'T' symbol); these are placed, respectively, into the two least significant bits of the first nibble. In the case of an even-length hex string, we must introduce a second nibble (of value zero) to ensure the hex-string is even in length and thus can be represented by a whole number of bytes. Thus we construct the following encoding:
 
     def compact_encode(hexarray):
-        term = 1 if hexarray[-1] == 16 else 0
+        term = 1 if hexarray[-1] == 16 else 0 
         if term: hexarray = hexarray[:-1]
         oddlen = len(hexarray) % 2
         flags = 2 * term + oddlen
@@ -71,13 +71,13 @@ To solve both of these issues, we force the first nibble of the final bytestream
 
 Examples:
 
-    &gt; [ 1, 2, 3, 4, 5 ]
-    '\x11\x23\x45'
-    &gt; [ 0, 1, 2, 3, 4, 5 ]
+    > [ 1, 2, 3, 4, 5 ]
+    '\x11\x23\x45'  ( Here in python, '\x11#E' because of its displaying unicodes. ) 
+    > [ 0, 1, 2, 3, 4, 5 ]
     '\x00\x01\x23\x45'
-    &gt; [ 0, 15, 1, 12, 11, 8, T ]
+    > [ 0, 15, 1, 12, 11, 8, T ]
     '\x20\x0f\x1c\xb8'
-    &gt; [ 15, 1, 12, 11, 8, T ]
+    > [ 15, 1, 12, 11, 8, T ]
     '\x3f\x1c\xb8'
 
 ### Main specification: Merkle Patricia Tree
@@ -86,7 +86,7 @@ Merkle Patricia trees solve the inefficiency issue by adding some extra complexi
 
 1. NULL (represented as the empty string)
 2. A two-item array `[ key, v ]` (aka kv node)
-3. A 17-item array `[ v0 ... v15, vt ]` (aka diverge node)
+3. A 17-item array `[ v0 ... v15, vt ]` (aka diverge or branch node)
 
 The idea is that in the event that there is a long path of nodes each with only one element, we shortcut the descent by setting up a kv node `[ key, value ]`, where the key gives the hexadecimal path to descend, in the compact encoding described above, and the value is just the hash of the node like in the standard radix tree. Also, we add another conceptual change: internal nodes can no longer have values, only leaves with no children of their own can; however, since to be fully generic we want the key/value store to be able to store keys like 'dog' and 'doge' at the same time, we simply add a terminator symbol (16) to the alphabet so there is never a value &quot;en-route&quot; to another value.
 

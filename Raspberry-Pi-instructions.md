@@ -7,7 +7,10 @@ category:
 Download from: http://gav.ethdev.com/ArchLinuxEthereum12082015.img.zip
 (it's 2.4 GB in size, if you want to save bandwidth, go and build it yourself, see instructions below)
 
-Unzip it and follow those guidelines to copy the image to your sd card: https://www.raspberrypi.org/documentation/installation/installing-images/
+For `eth` on single-board-computers, head to one of these articles:
+- [Installing binaries for Linux SBCs](http://www.ethdocs.org/en/latest/ethereum-clients/cpp-ethereum/installing-binaries/linux-sbcs.html)
+- [Building from source](http://www.ethdocs.org/en/latest/ethereum-clients/cpp-ethereum/building-from-source/index.html#building-from-source)
+- [Linux ARM cross-builds](http://www.ethdocs.org/en/latest/ethereum-clients/cpp-ethereum/building-from-source/linux-arm.html).
 
 Plugin the sd card, LAN connection and the power supply and lets start!
 
