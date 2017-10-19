@@ -1,8 +1,3 @@
----
-name: Home
-category: 
----
-
 # Ethereum Classic
 
 Ethereum Classic is a community building and supporting __Ethereum__ technologies and protocols. Ethereum Classic's origin relative to the [Ethereum Foundation](https://www.ethereum.org/foundation) came as a rejection the [EF DAO bailout](http://fintechist.com/ethereum-classic-gains-support-wake-dao-bailout/) in June 2016. Since then, Ethereum Classic has grown into it's own, forging paths in some ways parallel and in others divergent from it's hard-forked younger brother.
